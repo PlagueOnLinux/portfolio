@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { homelabServices, networkTopology, backupSchedule, infrastructureStats } from "@/data/homelab";
 import HomelabDiagram from "@/components/HomelabDiagram";
 import ServiceCard from "@/components/ServiceCard";
@@ -111,6 +112,13 @@ export default function HomelabPage() {
           </div>
         </div>
       </section>
+
+      {/* CTA */}
+      <div className="mt-12">
+        <Link href="/contact" className="btn-outline">
+          Interested? Let&apos;s talk
+        </Link>
+      </div>
     </div>
   );
 }
