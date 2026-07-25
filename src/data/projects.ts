@@ -25,6 +25,7 @@ export const projects: Project[] = [
     technologies: ["Python", "FastAPI", "PostgreSQL", "Ollama", "HTMX", "Docker"],
     links: {
       github: "https://github.com/PlagueOnLinux/hiremate-showcase",
+      live: "/hiremate",
     },
     featured: true,
   },

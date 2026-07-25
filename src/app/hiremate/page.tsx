@@ -5,13 +5,6 @@ import Link from "next/link";
 export default function HireMatePage() {
   return (
     <div className="section-container">
-      {/* Breadcrumb */}
-      <div className="mb-8">
-        <Link href="/projects" className="text-text-secondary hover:text-accent transition-colors text-sm">
-          &larr; Back to Projects
-        </Link>
-      </div>
-
       {/* Header */}
       <div className="flex items-start gap-4 mb-8">
         <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
