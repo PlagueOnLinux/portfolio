@@ -2,7 +2,7 @@ export const personalInfo = {
   name: "Maciej Bledowski",
   displayName: "Maciej B\u0142\u0119dowski",
   role: "IT Support Engineer",
-  tagline: "Linux \u2022 Infrastructure \u2022 HomeLab",
+  tagline: "Linux \u2022 Infrastructure \u2022 Systems \u2022 AI",
   location: "Warsaw, Poland",
   email: "bledowskimaciej@gmail.com",
   skills: [
