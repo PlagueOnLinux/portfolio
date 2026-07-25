@@ -27,7 +27,10 @@ export default function Hero() {
           </p>
 
           <p className="text-text-secondary text-lg max-w-2xl mb-12 leading-relaxed animate-slide-up">
-            {t("hero.description")}
+            IT Support Engineer with 3+ years of experience managing enterprise environments
+            across Windows, macOS and Linux. Outside of work, I build AI-powered applications
+            and self-hosted infrastructure to continuously expand my skills in Linux, networking
+            and automation.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-slide-up">
@@ -39,6 +42,12 @@ export default function Hero() {
                 <line x1="16" y1="17" x2="8" y2="17"/>
               </svg>
               CV
+            </a>
+            <a href="/projects" className="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+              </svg>
+              Projects
             </a>
             <a href={personalInfo.links.github} target="_blank" rel="noopener noreferrer" className="btn-outline">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
