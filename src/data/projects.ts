@@ -24,7 +24,7 @@ export const projects: Project[] = [
     status: "In Development",
     technologies: ["Python", "FastAPI", "PostgreSQL", "Ollama", "HTMX", "Docker"],
     links: {
-      github: "https://github.com/PlagueBoomer/hiremate-showcase",
+      github: "https://github.com/PlagueOnLinux/hiremate-showcase",
     },
     featured: true,
   },
@@ -60,7 +60,7 @@ export const projects: Project[] = [
     status: "Active",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     links: {
-      github: "https://github.com/PlagueBoomer/portfolio",
+      github: "https://github.com/PlagueOnLinux/portfolio",
       live: "https://maciejbledowski.pl",
     },
     featured: false,

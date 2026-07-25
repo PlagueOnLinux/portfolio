@@ -40,7 +40,7 @@ const commands: Record<string, string | string[]> = {
   contact: [
     "Email:    bledowskimaciej@gmail.com",
     "LinkedIn: linkedin.com/in/maciejbledowski",
-    "GitHub:   github.com/PlagueBoomer",
+    "GitHub:   github.com/PlagueOnLinux",
     "Web:      maciejbledowski.pl",
   ].join("\n"),
   uptime: "Portfolio online since 2025. In IT since 2021.",

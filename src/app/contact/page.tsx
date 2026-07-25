@@ -43,7 +43,7 @@ export default function ContactPage() {
 
         {/* GitHub */}
         <a
-          href="https://github.com/PlagueBoomer"
+          href="https://github.com/PlagueOnLinux"
           target="_blank"
           rel="noopener noreferrer"
           className="glass-card flex items-start gap-4 group"
@@ -52,7 +52,7 @@ export default function ContactPage() {
           <div>
             <p className="text-sm text-text-secondary">GitHub</p>
             <p className="text-text-primary font-medium group-hover:text-accent transition-colors">
-              github.com/PlagueBoomer
+              github.com/PlagueOnLinux
             </p>
           </div>
         </a>

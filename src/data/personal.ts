@@ -30,7 +30,7 @@ export const personalInfo = {
     period: "2021 - 2025",
   },
   links: {
-    github: "https://github.com/PlagueBoomer",
+    github: "https://github.com/PlagueOnLinux",
     linkedin: "https://linkedin.com/in/maciejbledowski",
     cv: "/cv",
     contact: "/contact",
