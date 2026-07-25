@@ -41,6 +41,7 @@ export const personalInfo = {
 export const navigation = [
   { labelKey: "nav.home", href: "/" },
   { labelKey: "nav.projects", href: "/projects" },
+  { labelKey: "nav.hiremate", href: "/projects/hiremate" },
   { labelKey: "nav.homelab", href: "/homelab" },
   { labelKey: "nav.cv", href: "/cv" },
   { labelKey: "nav.contact", href: "/contact" },

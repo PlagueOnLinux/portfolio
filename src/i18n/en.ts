@@ -2,6 +2,7 @@ export const translations: Record<string, string> = {
   // Navigation
   "nav.home": "Home",
   "nav.projects": "Projects",
+  "nav.hiremate": "HireMate",
   "nav.homelab": "Homelab",
   "nav.cv": "CV",
   "nav.contact": "Contact",
