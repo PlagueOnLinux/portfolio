@@ -23,7 +23,7 @@ export default function Hero() {
             {personalInfo.tagline}
           </p>
 
-          <p className="text-text-secondary text-lg max-w-2xl mb-10 leading-relaxed animate-slide-up">
+          <p className="text-text-secondary text-lg max-w-2xl mb-12 leading-relaxed animate-slide-up">
             IT Support Engineer with 3+ years of experience managing enterprise environments
             across Windows, macOS and Linux. Outside of work, I build AI-powered applications
             and self-hosted infrastructure to continuously expand my skills in Linux, networking
@@ -31,7 +31,7 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-3 mb-16 animate-slide-up">
+          <div className="flex flex-wrap gap-3 mb-14 animate-slide-up">
             <a href={personalInfo.links.cv} className="btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -56,20 +56,24 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Focus Cards */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 animate-slide-up">
-            {[
-              { value: "3+", label: "Years in IT" },
-              { value: "Linux", label: "Systems" },
-              { value: "Infra", label: "& Automation" },
-              { value: "AI", label: "Projects" },
-              { value: "HomeLab", label: "17+ Services" },
-            ].map((item) => (
-              <div key={item.label} className="text-center p-3 rounded-lg border border-border bg-surface">
-                <p className="text-accent font-bold text-lg font-mono">{item.value}</p>
-                <p className="text-text-secondary text-xs mt-0.5">{item.label}</p>
-              </div>
-            ))}
+          {/* Current Focus */}
+          <div className="animate-slide-up">
+            <p className="text-text-secondary text-sm mb-4 font-mono">Current Focus</p>
+            <p className="text-text-secondary text-xs mb-5">Technologies and areas I&apos;m actively working with.</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+              {[
+                { value: "Linux", label: "Systems" },
+                { value: "Infrastructure", label: "& Networking" },
+                { value: "Enterprise IT", label: "Support" },
+                { value: "AI", label: "Projects" },
+                { value: "HomeLab", label: "Self-Hosted" },
+              ].map((item) => (
+                <div key={item.label} className="text-center p-3 rounded-lg border border-border bg-surface">
+                  <p className="text-accent font-bold text-lg font-mono">{item.value}</p>
+                  <p className="text-text-secondary text-xs mt-0.5">{item.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

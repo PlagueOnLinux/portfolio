@@ -25,7 +25,7 @@ export default function FeaturedProjects() {
         </div>
 
         <div className="text-center">
-          <Link href="/projects" className="btn-outline">
+          <Link href="/projects" className="inline-flex items-center gap-2 px-6 py-3 border border-border text-text-primary rounded-lg font-medium hover:border-accent hover:text-accent transition-colors duration-200 text-sm tracking-wide">
             {t("projects.viewAll")}
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
