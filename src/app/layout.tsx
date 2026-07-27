@@ -6,13 +6,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Maciej Błędowski | IT | Help Desk | System Administration",
-  description: "Maciej Błędowski - IT Support Specialist. Portfolio, projects, homelab, and career.",
-  keywords: ["IT Support", "Linux", "Homelab", "Proxmox", "Networking", "Docker", "Portfolio"],
+  title: "Maciej Błędowski | IT Support Engineer",
+  description: "IT Support Engineer with 3+ years of experience in enterprise IT, endpoint management, Linux systems and self-hosted infrastructure. Explore my HomeLab, HireMate project and professional portfolio.",
+  keywords: ["IT Support Engineer", "Linux", "HomeLab", "Proxmox", "Infrastructure", "AI", "Portfolio"],
   authors: [{ name: "Maciej Błędowski" }],
   openGraph: {
-    title: "Maciej Błędowski | IT Support",
-    description: "IT | Help Desk | System Administration",
+    title: "Maciej Błędowski | IT Support Engineer",
+    description: "IT Support Engineer with 3+ years of experience in enterprise IT, endpoint management, Linux systems and self-hosted infrastructure.",
     url: "https://maciejbledowski.pl",
     siteName: "Maciej Błędowski",
     type: "website",
