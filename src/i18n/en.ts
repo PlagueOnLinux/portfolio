@@ -10,18 +10,18 @@ export const translations: Record<string, string> = {
   // Hero
   "hero.greeting": "Hi, my name is",
   "hero.description":
-    "3+ years managing end-user devices, identity systems, and office infrastructure. Passionate about open-source, self-hosting, and building things from the ground up.",
+    "IT Support Engineer with over 3 years of experience in enterprise environments, specializing in endpoint administration, identity management and IT infrastructure support. Outside of work, I build AI-powered applications and self-hosted infrastructure.",
 
   // About
   "about.title": "About Me",
   "about.subtitle": "Who I am and what I do.",
   "about.skills.title": "Technologies & Tools",
   "about.p1":
-    "IT Support Specialist with over 3 years of experience in end-user device management (Windows, macOS, Linux) and identity administration across cloud and hybrid environments. Working daily with MDM solutions (Intune, Jamf Pro) and managing accounts and access in Active Directory and Okta.",
+    "IT Support Engineer with over 3 years of experience in enterprise environments, specializing in endpoint administration, identity management and IT infrastructure support. I work daily with Windows, Linux and macOS, as well as enterprise solutions including Microsoft Intune, Jamf Pro, Active Directory and Okta.",
   "about.p2":
-    "Experienced in both large-scale hardware deployments and independently delivering end-to-end IT support for entire office environments. Previously the sole IT engineer responsible for a 200-person office at Xperi Inc.",
+    "Previously the sole IT support engineer for a 200-person office at Xperi Inc., responsible for all on-site IT support, fleet management, and VIP support for senior leadership.",
   "about.p3":
-    "Outside of work, I run a homelab built on Proxmox, self-host everything I can, and build tools that solve real problems. Currently expanding my skills in system administration and networking through advanced hands-on projects. Passionate about open-source technologies.",
+    "Outside of work, I develop my personal technical projects, including a Proxmox-based HomeLab environment and HireMate, an AI-powered job search assistant, continuously expanding my expertise in IT infrastructure, Linux systems, automation and artificial intelligence.",
 
   // Experience
   "experience.title": "Experience",

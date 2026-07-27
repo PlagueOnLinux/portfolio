@@ -9,18 +9,18 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     company: "Freelance",
-    role: "IT Support & Skills Development",
+    role: "Freelance IT Support & Infrastructure Projects",
     period: "12/2025 - Present",
     description:
-      "Delivering independent IT support for individual clients: hardware diagnostics and repair, peripheral device configuration (printers), and OS optimization. Expanding Linux administration skills and maintaining a home lab environment for advanced system configuration.",
-    technologies: ["Linux", "Hardware Diagnostics", "Home Lab", "Networking"],
+      "Delivered independent IT services for individual clients, including hardware diagnostics and repair, peripheral device configuration, and operating system optimization. Administer Linux systems in a personal lab environment, including user, permission and file system management. Designed and developed a Proxmox-based HomeLab environment supporting containerization, infrastructure monitoring and self-hosted services.",
+    technologies: ["Linux", "Proxmox", "Docker", "Hardware Diagnostics", "Networking"],
   },
   {
     company: "University of Warsaw / Warner Bros. Discovery",
     role: "Linux Systems Support & IT Projects",
     period: "09/2025 - 11/2025",
     description:
-      "University of Warsaw: Technical support in a Linux-dominant academic environment (Ubuntu, Debian), including hardware and system diagnostics for researchers and engineers. Warner Bros. Discovery: Ad-hoc IT intervention including infrastructure support and hardware inventory.",
+      "University of Warsaw \u2013 Provided technical support in a Linux-dominant academic environment (Ubuntu, Debian), including hardware and system diagnostics for researchers and engineers. Warner Bros. Discovery \u2013 Delivered ad-hoc IT support, including infrastructure assistance and hardware inventory management.",
     technologies: ["Linux", "Ubuntu", "Debian", "Hardware Diagnostics"],
   },
   {
@@ -28,7 +28,7 @@ export const experiences: Experience[] = [
     role: "IT Support Engineer",
     period: "09/2024 - 05/2025",
     description:
-      "The only IT support engineer for the Warsaw office (~200 employees). Full responsibility for on-site IT support including video conferencing systems. Handled 20+ daily tickets in ServiceNow. Managed laptop fleet (Windows, macOS, Linux) via Intune and Jamf Pro. Administered accounts in Okta, Active Directory, and AWS. Provided VIP support for senior leadership.",
+      "The only IT support engineer for the Warsaw office (~200 employees), responsible for all on-site IT support and maintenance of video conferencing systems. Handled 20+ daily technical requests via ServiceNow, with a strong focus on direct end-user support. Managed laptop fleet (Windows, macOS, Linux) using Intune and Jamf Pro; administered accounts and access in Okta, Active Directory, and AWS environments. Led end-to-end lifecycle management of IT equipment. Provided high-priority VIP support for senior leadership on-site.",
     technologies: ["Intune", "Jamf Pro", "Okta", "Active Directory", "ServiceNow", "AWS"],
   },
   {
@@ -36,7 +36,7 @@ export const experiences: Experience[] = [
     role: "Short-term IT Projects & Support",
     period: "02/2023 - 09/2024",
     description:
-      "Euvic IT: Prepared and configured 100+ Windows workstations for corporate users. KPMG: Hardware diagnostics, ITSM tickets, AD administration, VIP support. LUX MED: Remote IT support, ticketing systems, app configuration. Coty: Global support in English, user account management.",
+      "Euvic IT \u2013 Prepared and configured 100+ Windows workstations for corporate users. KPMG \u2013 Diagnosed hardware issues, handled ITSM tickets, administered user accounts in Active Directory, and provided VIP support for senior management. LUX MED \u2013 Delivered remote IT support, handled ticketing systems, and configured applications. Coty Inc. \u2013 Provided global IT support in English and managed user accounts.",
     technologies: ["Active Directory", "ITSM", "Windows", "VIP Support"],
   },
   {
@@ -44,7 +44,7 @@ export const experiences: Experience[] = [
     role: "Technical Customer Service Specialist",
     period: "10/2021 - 01/2023",
     description:
-      "Handling customer calls and providing prompt technical assistance. Providing support, sharing information about new features and solutions. Active presence on technical forums, building a support community. Monitoring trends and analyzing customer requests to identify recurring issues.",
+      "Handling customer calls and providing prompt assistance in resolving issues. Providing technical support to customers, sharing information about new features and solutions. Actively participate in technical forums, providing assistance to users and building a support community. Monitor trends and analyze customer requests to identify recurring issues.",
     technologies: ["Customer Support", "Hardware", "Technical Forums", "Troubleshooting"],
   },
 ];

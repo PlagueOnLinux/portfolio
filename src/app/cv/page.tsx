@@ -105,24 +105,52 @@ export default function CVPage() {
           </div>
         </section>
 
-        {/* Skills */}
+        {/* Skills & Technologies */}
         <section className="mb-12">
           <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
             <span className="text-accent font-mono text-sm">04.</span>{t("cv.skills")}
           </h3>
-          <div className="glass-card">
-            <div className="flex flex-wrap gap-2">
-              {personalInfo.skills.map((skill) => (
-                <span key={skill} className="tag">{skill}</span>
-              ))}
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="glass-card">
+              <h4 className="text-text-primary font-medium text-sm mb-3">Technologies</h4>
+              <div className="flex flex-wrap gap-2">
+                {personalInfo.technologies.map((tech) => (
+                  <span key={tech} className="tag">{tech}</span>
+                ))}
+              </div>
             </div>
+            <div className="glass-card">
+              <h4 className="text-text-primary font-medium text-sm mb-3">Core Competencies</h4>
+              <div className="flex flex-wrap gap-2">
+                {personalInfo.skills.map((skill) => (
+                  <span key={skill} className="tag">{skill}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Certifications */}
+        <section className="mb-12">
+          <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
+            <span className="text-accent font-mono text-sm">05.</span>Certifications
+          </h3>
+          <div className="glass-card">
+            <ul className="space-y-2">
+              {personalInfo.certifications.map((cert) => (
+                <li key={cert} className="flex items-center gap-2 text-text-secondary text-sm">
+                  <span className="text-accent font-mono text-xs">&#9656;</span>
+                  {cert}
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
         {/* Education */}
         <section className="mb-12">
           <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
-            <span className="text-accent font-mono text-sm">05.</span>{t("cv.education")}
+            <span className="text-accent font-mono text-sm">06.</span>{t("cv.education")}
           </h3>
           <div className="glass-card">
             <h4 className="text-text-primary font-medium">{personalInfo.education.school}</h4>
@@ -136,7 +164,7 @@ export default function CVPage() {
         {/* Languages */}
         <section className="mb-12">
           <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
-            <span className="text-accent font-mono text-sm">06.</span>{t("cv.languages")}
+            <span className="text-accent font-mono text-sm">07.</span>{t("cv.languages")}
           </h3>
           <div className="glass-card">
             <div className="flex flex-wrap gap-4">
@@ -152,7 +180,7 @@ export default function CVPage() {
         {/* Links */}
         <section>
           <h3 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
-            <span className="text-accent font-mono text-sm">07.</span>{t("cv.links")}
+            <span className="text-accent font-mono text-sm">08.</span>{t("cv.links")}
           </h3>
           <div className="glass-card">
             <div className="flex flex-wrap gap-4">
