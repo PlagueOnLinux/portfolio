@@ -24,6 +24,11 @@ export default function HireMatePage() {
         </div>
       </div>
 
+      {/* Value proposition */}
+      <p className="text-text-secondary text-base italic mb-12 max-w-2xl">
+        Helping users organize their entire job search workflow while keeping AI private and under their control.
+      </p>
+
       {/* Description */}
       <section className="mb-12">
         <p className="text-text-secondary leading-relaxed max-w-3xl">
@@ -38,16 +43,19 @@ export default function HireMatePage() {
         <h2 className="text-xl font-semibold text-text-primary mb-6">How It Works</h2>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
-            { step: "01", title: "Collect", desc: "Import job offers from URLs, pasted text, or add them manually." },
-            { step: "02", title: "Analyze", desc: "AI extracts requirements, salary, contract type, and work mode." },
-            { step: "03", title: "Score", desc: "Each offer scored with career fit + realistic match ratings." },
-            { step: "04", title: "Gap Analysis", desc: "Identifies missing requirements and experience mismatches." },
-            { step: "05", title: "Recommend", desc: "AI generates recommendation with risk level and application notes." },
-            { step: "06", title: "Track", desc: "Full pipeline: new → to apply → applied → interview → offer / rejected." },
+            { step: "01", title: "Collect", desc: "Import job offers from URLs, pasted text, or add them manually.", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> },
+            { step: "02", title: "Analyze", desc: "AI extracts requirements, salary, contract type, and work mode.", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> },
+            { step: "03", title: "Score", desc: "Each offer scored with career fit + realistic match ratings.", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg> },
+            { step: "04", title: "Gap Analysis", desc: "Identifies missing requirements and experience mismatches.", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg> },
+            { step: "05", title: "Recommend", desc: "AI generates recommendation with risk level and application notes.", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg> },
+            { step: "06", title: "Track", desc: "Full pipeline: new → to apply → applied → interview → offer / rejected.", icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><polyline points="20 6 9 17 4 12"/></svg> },
           ].map((item) => (
             <div key={item.step} className="glass-card">
-              <span className="text-accent font-mono text-xs">{item.step}</span>
-              <h3 className="text-text-primary font-medium mt-1 mb-2">{item.title}</h3>
+              <div className="flex items-center gap-2 mb-2">
+                {item.icon}
+                <span className="text-accent font-mono text-xs">{item.step}</span>
+              </div>
+              <h3 className="text-text-primary font-medium mb-2">{item.title}</h3>
               <p className="text-text-secondary text-sm leading-relaxed">{item.desc}</p>
             </div>
           ))}
@@ -164,25 +172,40 @@ export default function HireMatePage() {
         <h2 className="text-xl font-semibold text-text-primary mb-6">Roadmap</h2>
         <div className="space-y-3">
           {[
-            { label: "Foundation", done: true },
-            { label: "Job Offers MVP", done: true },
-            { label: "AI Scoring", done: true },
-            { label: "Candidate Profile & CV Analysis", done: true },
-            { label: "Job Import (URL & text)", done: true },
-            { label: "Gap Analysis & Risk Levels", done: true },
-            { label: "Application Generation", done: false },
-            { label: "Assisted Applications (Playwright)", done: false },
-            { label: "Automated Job Discovery", done: false },
+            { label: "Foundation", status: "done" as const },
+            { label: "Job Offers MVP", status: "done" as const },
+            { label: "AI Scoring", status: "done" as const },
+            { label: "Candidate Profile & CV Analysis", status: "done" as const },
+            { label: "Job Import (URL & text)", status: "done" as const },
+            { label: "Gap Analysis & Risk Levels", status: "done" as const },
+            { label: "Application Generation", status: "in-progress" as const },
+            { label: "Assisted Applications (Playwright)", status: "planned" as const },
+            { label: "Automated Job Discovery", status: "planned" as const },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-3">
-              <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${item.done ? "bg-accent/20 text-accent" : "bg-surface-light border border-border"}`}>
-                {item.done && (
+              <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${
+                item.status === "done"
+                  ? "bg-green-500/20 text-green-400"
+                  : item.status === "in-progress"
+                  ? "bg-yellow-500/20 text-yellow-400"
+                  : "bg-surface-light border border-border"
+              }`}>
+                {item.status === "done" && (
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 )}
+                {item.status === "in-progress" && (
+                  <div className="w-2 h-2 rounded-full bg-current" />
+                )}
               </div>
-              <span className={`text-sm ${item.done ? "text-text-primary" : "text-text-secondary"}`}>{item.label}</span>
+              <span className={`text-sm ${
+                item.status === "done"
+                  ? "text-text-primary"
+                  : item.status === "in-progress"
+                  ? "text-yellow-400"
+                  : "text-text-secondary"
+              }`}>{item.label}</span>
             </div>
           ))}
         </div>
