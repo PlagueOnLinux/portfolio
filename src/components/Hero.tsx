@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="section-container w-full">
         <div className="max-w-3xl">
           <p className="text-text-secondary text-lg mb-6 animate-fade-in">
-            Building reliable IT infrastructure.
+            Open source mindset. Enterprise experience.
           </p>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary mb-4 animate-slide-up">
