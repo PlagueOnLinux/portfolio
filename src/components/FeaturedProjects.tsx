@@ -18,7 +18,7 @@ export default function FeaturedProjects() {
         </h2>
         <p className="section-subtitle">{t("projects.subtitle")}</p>
 
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-10">
           {featured.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
