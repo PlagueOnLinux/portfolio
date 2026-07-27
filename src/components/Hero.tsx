@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-3 animate-slide-up">
+          <div className="flex flex-wrap gap-3 mb-16 animate-slide-up">
             <a href="/CV_MaciejBledowski_EN.pdf" download className="btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
@@ -42,6 +42,22 @@ export default function Hero() {
             <a href={personalInfo.links.contact} className="btn-outline">
               Contact
             </a>
+          </div>
+
+          {/* Highlight Cards */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 animate-slide-up">
+            {[
+              { value: "3+", label: "Years Experience" },
+              { value: "Enterprise", label: "IT" },
+              { value: "12+", label: "Self-Hosted Services" },
+              { value: "Linux", label: "Daily" },
+              { value: "3", label: "Active Projects" },
+            ].map((item) => (
+              <div key={item.label} className="text-center p-3 rounded-lg border border-border bg-surface">
+                <p className="text-accent font-bold text-lg font-mono">{item.value}</p>
+                <p className="text-text-secondary text-xs mt-0.5">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
 
