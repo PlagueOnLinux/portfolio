@@ -33,7 +33,7 @@ export const translations: Record<string, string> = {
   "projects.viewAll": "View All Projects",
   "projects.page.title": "Projects",
   "projects.page.subtitle":
-    "Things I'm building, maintaining, and experimenting with. From AI-powered tools to self-hosted infrastructure.",
+    "A collection of personal projects showcasing my work in Linux, self-hosted infrastructure and AI.",
 
   // Contact
   "contact.title": "Contact",

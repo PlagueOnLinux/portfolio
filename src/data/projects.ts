@@ -55,7 +55,7 @@ export const projects: Project[] = [
     name: "Portfolio Website",
     slug: "portfolio",
     description:
-      "This website. Built with Next.js, TypeScript, and Tailwind CSS. Deployed on Vercel.",
+      "Portfolio website bringing together my projects, technical experience and professional background.",
     longDescription:
       "Personal portfolio and knowledge base built as a modern web application. Features a dark minimalist design, responsive layout, and serves as a central hub for projects, experience, and technical documentation.",
     status: "Active",
