@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { homelabServices, networkTopology, infrastructureStats } from "@/data/homelab";
+import { homelabServices, infrastructureStats } from "@/data/homelab";
 import HomelabDiagram from "@/components/HomelabDiagram";
 import ServiceCard from "@/components/ServiceCard";
 import { useLanguage } from "@/context/LanguageContext";
@@ -75,7 +75,7 @@ export default function HomelabPage() {
       {/* Network Topology */}
       <section className="mb-14">
         <h2 className="text-xl font-semibold text-text-primary mb-6">{t("homelab.architecture")}</h2>
-        <HomelabDiagram topology={networkTopology} />
+        <HomelabDiagram />
       </section>
 
       {/* Core Services */}
