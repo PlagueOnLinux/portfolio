@@ -49,7 +49,7 @@ function ServiceColumn({ cat }: { cat: typeof serviceColumns[0] }) {
           {cat.title}
         </p>
       </div>
-      <div className="flex flex-col gap-1.5 w-full">
+      <div className="flex flex-col gap-2.5 w-full">
         {cat.services.map((service) => (
           <div
             key={service}
