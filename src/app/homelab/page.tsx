@@ -74,7 +74,7 @@ export default function HomelabPage() {
 
       {/* Network Topology */}
       <section className="mb-14">
-        <h2 className="text-xl font-semibold text-text-primary mb-6">{t("homelab.architecture")}</h2>
+        <h2 className="text-xl font-semibold text-text-primary mb-6">Homelab Architecture</h2>
         <HomelabDiagram />
       </section>
 
