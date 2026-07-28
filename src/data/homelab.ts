@@ -3,6 +3,7 @@ export interface HomelabService {
   description: string;
   category: "core" | "media" | "monitoring" | "backup" | "productivity" | "networking";
   icon: string;
+  deployment: "LXC" | "Docker" | "VM" | "Physical" | "Network";
 }
 
 export interface HomelabNode {
@@ -16,114 +17,132 @@ export const homelabServices: HomelabService[] = [
   // Core / Networking
   {
     name: "AdGuard Home",
-    description: "Network-wide DNS server with ad blocking and DNS rewrites for all *.home.arpa domains.",
+    description: "DNS server for the entire network. Blocks ads and trackers, handles DNS rewrites for all *.home.arpa domains.",
     category: "networking",
     icon: "shield",
+    deployment: "LXC",
   },
   {
     name: "Nginx Proxy Manager",
-    description: "Reverse proxy handling 25+ local domains, routing traffic from AdGuard to the correct LXC container.",
+    description: "Routes traffic from 25+ local domains to the correct container. All services accessible via clean URLs instead of IP:port.",
     category: "networking",
     icon: "globe",
+    deployment: "LXC",
   },
   {
     name: "Proxmox VE",
-    description: "Type 1 hypervisor managing 17+ LXC containers and VMs. The backbone of the entire infrastructure.",
+    description: "The hypervisor running everything. Manages all LXC containers and VMs from a single web interface.",
     category: "core",
     icon: "server",
+    deployment: "Physical",
   },
   {
     name: "Proxmox Backup Server",
-    description: "Automated weekly backups of all LXC containers, VMs, and host config. Runs on a schedule via smart plug automation.",
+    description: "Automated weekly backups of every container and VM. Runs only on Sundays, powered on and off by a smart plug.",
     category: "backup",
     icon: "database",
+    deployment: "Physical",
   },
   // Media
   {
     name: "Jellyfin",
-    description: "Self-hosted media streaming for movies and TV shows with Samba share for media files.",
+    description: "My personal Netflix. Streams movies and TV shows to any device on the network via Samba share.",
     category: "media",
     icon: "play",
+    deployment: "LXC",
   },
   {
     name: "Immich",
-    description: "Photo and video management with face recognition and ML. External libraries mounted from NAS.",
+    description: "Google Photos replacement with face recognition and AI tagging. Photos stored on NAS, database local.",
     category: "media",
     icon: "image",
+    deployment: "LXC",
   },
   {
     name: "Navidrome",
-    description: "Music streaming server with Subsonic API compatibility.",
+    description: "Personal music streaming with Subsonic API. Works with any mobile music app.",
     category: "media",
     icon: "music",
+    deployment: "Docker",
   },
   {
     name: "Media Stack",
-    description: "Radarr, Sonarr, Prowlarr, Jellyseerr, Bazarr, qBittorrent — automated media acquisition pipeline.",
+    description: "Radarr, Sonarr, Prowlarr, Jellyseerr, Bazarr, qBittorrent — the full automated media pipeline from request to playback.",
     category: "media",
     icon: "film",
+    deployment: "LXC",
   },
   // Monitoring
   {
     name: "Uptime Kuma",
-    description: "Service availability monitoring with notifications on downtime for all homelab services.",
+    description: "Monitors every service in my homelab and instantly alerts me if something goes offline.",
     category: "monitoring",
     icon: "activity",
+    deployment: "LXC",
   },
   {
     name: "Pulse",
-    description: "Infrastructure monitoring for Proxmox host, LXC containers, VMs, storage, and temperatures.",
+    description: "Proxmox-specific monitoring — tracks host health, container status, storage usage and temperatures.",
     category: "monitoring",
     icon: "bar-chart",
+    deployment: "LXC",
   },
   {
     name: "Beszel",
-    description: "Lightweight system resource monitoring — CPU, RAM, disk, and network metrics for all nodes.",
+    description: "Lightweight resource graphs for every node. CPU, RAM, disk and network at a glance.",
     category: "monitoring",
     icon: "bar-chart",
+    deployment: "LXC",
   },
   {
     name: "Scrutiny",
-    description: "SMART disk health monitoring — tracks drive condition across all storage devices.",
+    description: "Keeps an eye on disk health via SMART data. Early warning before a drive fails.",
     category: "monitoring",
     icon: "hard-drive",
+    deployment: "LXC",
   },
   // Productivity
   {
     name: "Paperless-ngx",
-    description: "Document management system with OCR. Digitizing and archiving all important documents.",
+    description: "OCR document archive for invoices, contracts and personal documents with full-text search.",
     category: "productivity",
     icon: "file-text",
+    deployment: "LXC",
   },
   {
     name: "Wiki.js",
-    description: "Self-hosted knowledge base and documentation for the entire homelab setup.",
+    description: "Where all homelab documentation lives. IP tables, configs, procedures — everything searchable.",
     category: "productivity",
     icon: "book",
+    deployment: "LXC",
   },
   {
     name: "Vikunja",
-    description: "Task management and TODO lists for projects and ideas.",
+    description: "Task manager for homelab projects, ideas and things to fix. Simple boards and lists.",
     category: "productivity",
     icon: "check-square",
+    deployment: "LXC",
   },
   {
     name: "Stirling PDF",
-    description: "All-in-one PDF toolkit — merge, split, convert, compress, and manipulate PDF files.",
+    description: "All-in-one PDF toolkit. Merge, split, compress, convert — without uploading anything to the cloud.",
     category: "productivity",
     icon: "file",
+    deployment: "LXC",
   },
   {
     name: "ChangeDetection",
-    description: "Monitors websites for changes and sends notifications — useful for job listings and deals.",
+    description: "Watches websites for changes and sends notifications. Useful for job listings and price drops.",
     category: "productivity",
     icon: "eye",
+    deployment: "LXC",
   },
   {
     name: "Homarr",
-    description: "Homelab dashboard — central landing page with quick links to all services.",
+    description: "My central dashboard with instant access to every self-hosted service.",
     category: "productivity",
     icon: "layout",
+    deployment: "LXC",
   },
 ];
 

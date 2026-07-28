@@ -46,7 +46,7 @@ export default function HomelabPage() {
       </p>
 
       {/* Description */}
-      <section className="mb-16">
+      <section className="mb-10">
         <p className="text-text-secondary leading-relaxed max-w-3xl mb-4">
           A complete self-hosted ecosystem running on Proxmox VE with 17+ LXC containers, 25+ services, and automated weekly backups.
           Everything accessible via local DNS through 25+ custom *.home.arpa domains.
@@ -58,7 +58,7 @@ export default function HomelabPage() {
       </section>
 
       {/* Stats */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
         {[
           { label: t("stats.containers"), value: infrastructureStats.containers },
           { label: t("stats.services"), value: infrastructureStats.services },
@@ -73,7 +73,7 @@ export default function HomelabPage() {
       </div>
 
       {/* Network Topology */}
-      <section className="mb-16">
+      <section className="mb-14">
         <h2 className="text-xl font-semibold text-text-primary mb-6">{t("homelab.architecture")}</h2>
         <HomelabDiagram topology={networkTopology} />
       </section>
