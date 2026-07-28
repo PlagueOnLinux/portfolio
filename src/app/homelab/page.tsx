@@ -20,10 +20,42 @@ export default function HomelabPage() {
 
   return (
     <div className="section-container">
-      <div className="mb-12">
-        <h1 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">{t("homelab.title")}</h1>
-        <p className="text-text-secondary text-lg max-w-2xl">{t("homelab.description")}</p>
+      {/* Header — matching HireMate layout */}
+      <div className="flex items-start gap-4 mb-8">
+        <div className="w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+            <line x1="6" y1="6" x2="6.01" y2="6" />
+            <line x1="6" y1="18" x2="6.01" y2="18" />
+          </svg>
+        </div>
+        <div>
+          <h1 className="text-3xl md:text-4xl font-bold text-text-primary">HomeLab</h1>
+          <p className="text-text-secondary mt-1">Self-hosted infrastructure built on Proxmox VE and Linux.</p>
+          <span className="status-badge status-active mt-3 inline-flex">
+            <span className="w-1.5 h-1.5 rounded-full bg-current" />
+            Active Infrastructure
+          </span>
+        </div>
       </div>
+
+      {/* Tagline */}
+      <p className="text-text-secondary text-base italic mb-12 max-w-2xl">
+        Running my personal infrastructure for learning, automation and everyday services while keeping full control over data and privacy.
+      </p>
+
+      {/* Description */}
+      <section className="mb-16">
+        <p className="text-text-secondary leading-relaxed max-w-3xl mb-4">
+          A complete self-hosted ecosystem running on Proxmox VE with 17+ LXC containers, 25+ services, and automated weekly backups.
+          Everything accessible via local DNS through 25+ custom *.home.arpa domains.
+        </p>
+        <p className="text-text-secondary leading-relaxed max-w-3xl">
+          The environment is designed for hands-on learning, real-world infrastructure management, and day-to-day personal use —
+          from media streaming and photo management to document archival and system monitoring.
+        </p>
+      </section>
 
       {/* Stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
@@ -46,9 +78,9 @@ export default function HomelabPage() {
         <HomelabDiagram topology={networkTopology} />
       </section>
 
-      {/* Services */}
+      {/* Core Services */}
       <section className="mb-16">
-        <h2 className="text-xl font-semibold text-text-primary mb-8">{t("homelab.services")}</h2>
+        <h2 className="text-xl font-semibold text-text-primary mb-8">Core Services</h2>
         {categories.map(({ key, labelKey }) => {
           const services = homelabServices.filter((s) => s.category === key);
           if (services.length === 0) return null;
@@ -115,8 +147,11 @@ export default function HomelabPage() {
 
       {/* CTA */}
       <div className="mt-12">
-        <Link href="/contact" className="btn-outline">
-          Interested? Let&apos;s talk
+        <Link href="/projects" className="btn-outline">
+          Explore More Projects
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
         </Link>
       </div>
     </div>
