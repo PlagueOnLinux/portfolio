@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { homelabServices, networkTopology, backupSchedule, infrastructureStats } from "@/data/homelab";
+import { homelabServices, networkTopology, infrastructureStats } from "@/data/homelab";
 import HomelabDiagram from "@/components/HomelabDiagram";
 import ServiceCard from "@/components/ServiceCard";
 import { useLanguage } from "@/context/LanguageContext";
@@ -103,11 +103,18 @@ export default function HomelabPage() {
         <p className="text-text-secondary mb-6 max-w-2xl">{t("homelab.backup.description")}</p>
         <div className="glass-card">
           <div className="space-y-4">
-            {backupSchedule.map((item, i) => (
-              <div key={i} className="flex items-start gap-4">
+            {[
+              { time: "00:35", step: "Smart plug powers on PBS", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/></svg> },
+              { time: "00:40", step: "BIOS auto-starts Proxmox Backup Server", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><polygon points="5 3 19 12 5 21 5 3"/></svg> },
+              { time: "00:50", step: "Proxmox host config backup", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg> },
+              { time: "01:00", step: "Full backup of all LXC containers and VMs", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg> },
+              { time: "03:00", step: "PBS graceful shutdown via script", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg> },
+              { time: "03:15", step: "Smart plug cuts power to PBS", icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"/><line x1="12" y1="2" x2="12" y2="12"/><line x1="2" y1="2" x2="22" y2="22"/></svg> },
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-4">
                 <span className="text-accent font-mono text-sm whitespace-nowrap min-w-[50px]">{item.time}</span>
                 <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent flex-shrink-0" />
+                  {item.icon}
                   <span className="text-text-secondary text-sm">{item.step}</span>
                 </div>
               </div>
