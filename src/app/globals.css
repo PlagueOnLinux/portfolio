@@ -117,13 +117,8 @@
 
 
 /* Homelab service card interactions */
-.service-pulse {
-  animation: servicePulse 1.5s ease-out;
-}
-
 .service-hover-highlight {
-  border-color: rgba(87, 255, 0, 0.3) !important;
-  box-shadow: 0 0 12px rgba(87, 255, 0, 0.1);
+  border-color: rgba(87, 255, 0, 0.2) !important;
 }
 
 @keyframes servicePulse {

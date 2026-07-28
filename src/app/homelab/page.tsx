@@ -84,9 +84,22 @@ export default function HomelabPage() {
         {categories.map(({ key, labelKey }) => {
           const services = homelabServices.filter((s) => s.category === key);
           if (services.length === 0) return null;
+
+          const badgeColor = {
+            core: "bg-purple-500/20 border-purple-500/40",
+            networking: "bg-green-500/20 border-green-500/40",
+            media: "bg-blue-500/20 border-blue-500/40",
+            monitoring: "bg-yellow-500/20 border-yellow-500/40",
+            backup: "bg-orange-500/20 border-orange-500/40",
+            productivity: "bg-cyan-500/20 border-cyan-500/40",
+          }[key];
+
           return (
             <div key={key} className="mb-12">
-              <h3 className="text-text-secondary font-mono text-sm uppercase tracking-wider mb-4">{t(labelKey)}</h3>
+              <h3 className="flex items-center gap-2 text-text-secondary font-mono text-sm uppercase tracking-wider mb-4">
+                <span className={`w-2.5 h-2.5 rounded-sm border ${badgeColor}`} />
+                {t(labelKey)}
+              </h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {services.map((service) => (
                   <ServiceCard key={service.name} service={service} />

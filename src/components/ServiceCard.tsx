@@ -1,39 +1,44 @@
-"use client";
-
 import { HomelabService } from "@/data/homelab";
 
-function getCategoryColor(category: HomelabService["category"]) {
+function getCategoryHoverBorder(category: HomelabService["category"]) {
   switch (category) {
-    case "core": return "purple";
-    case "networking": return "green";
-    case "media": return "blue";
-    case "monitoring": return "yellow";
-    case "backup": return "orange";
-    case "productivity": return "cyan";
+    case "core": return "hover:border-purple-400/50";
+    case "networking": return "hover:border-green-400/50";
+    case "media": return "hover:border-blue-400/50";
+    case "monitoring": return "hover:border-yellow-400/50";
+    case "backup": return "hover:border-orange-400/50";
+    case "productivity": return "hover:border-cyan-400/50";
   }
 }
 
-function getCategoryClasses(category: HomelabService["category"]) {
-  const color = getCategoryColor(category);
-  return {
-    text: `text-${color}-400`,
-    hoverBorder: `hover:border-${color}-400/50`,
-    hoverText: `group-hover:text-${color}-400`,
-  };
+function getCategoryHoverTitle(category: HomelabService["category"]) {
+  switch (category) {
+    case "core": return "group-hover:text-purple-400";
+    case "networking": return "group-hover:text-green-400";
+    case "media": return "group-hover:text-blue-400";
+    case "monitoring": return "group-hover:text-yellow-400";
+    case "backup": return "group-hover:text-orange-400";
+    case "productivity": return "group-hover:text-cyan-400";
+  }
+}
+
+function getCategoryIconColor(category: HomelabService["category"]) {
+  switch (category) {
+    case "core": return "text-purple-400";
+    case "networking": return "text-green-400";
+    case "media": return "text-blue-400";
+    case "monitoring": return "text-yellow-400";
+    case "backup": return "text-orange-400";
+    case "productivity": return "text-cyan-400";
+  }
 }
 
 export default function ServiceCard({ service }: { service: HomelabService }) {
-  const classes = getCategoryClasses(service.category);
-  const cardId = `service-${service.name.toLowerCase().replace(/[^a-z0-9]/g, "-")}`;
-
   return (
-    <div
-      id={cardId}
-      className={`bg-surface border border-border rounded-xl p-6 transition-all duration-200 hover:-translate-y-0.5 ${classes.hoverBorder} group service-card`}
-    >
+    <div className={`bg-surface border border-border rounded-xl p-6 transition-all duration-200 hover:-translate-y-0.5 ${getCategoryHoverBorder(service.category)} group`}>
       {/* Top row: icon + deployment badge */}
       <div className="flex items-start justify-between mb-3">
-        <div className={classes.text}>
+        <div className={getCategoryIconColor(service.category)}>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="12" cy="12" r="10" />
           </svg>
@@ -44,7 +49,7 @@ export default function ServiceCard({ service }: { service: HomelabService }) {
       </div>
 
       {/* Title */}
-      <h4 className={`text-text-primary font-medium text-sm mb-1.5 transition-colors duration-200 ${classes.hoverText}`}>
+      <h4 className={`text-text-primary font-medium text-sm mb-1.5 transition-colors duration-200 ${getCategoryHoverTitle(service.category)}`}>
         {service.name}
       </h4>
 
