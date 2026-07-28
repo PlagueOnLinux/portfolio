@@ -2,6 +2,11 @@
 
 const serviceColumns = [
   {
+    title: "Networking",
+    color: "green",
+    services: ["AdGuard Home", "Nginx Proxy Manager"],
+  },
+  {
     title: "Media",
     color: "blue",
     services: ["Jellyfin", "Immich", "Media Stack", "Navidrome"],
@@ -20,6 +25,7 @@ const serviceColumns = [
 
 function getColorClasses(color: string) {
   switch (color) {
+    case "green": return { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400" };
     case "blue": return { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400" };
     case "yellow": return { bg: "bg-yellow-500/10", border: "border-yellow-500/30", text: "text-yellow-400" };
     case "cyan": return { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400" };
@@ -45,20 +51,6 @@ export default function HomelabDiagram() {
         <div className="w-px h-5 bg-border" />
         <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
-        {/* AdGuard */}
-        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm">
-          AdGuard Home
-        </div>
-        <div className="w-px h-5 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
-
-        {/* Nginx */}
-        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm">
-          Nginx Proxy Manager
-        </div>
-        <div className="w-px h-5 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
-
         {/* Proxmox */}
         <div className="bg-purple-500/10 border border-purple-500/30 text-purple-400 px-5 py-3 rounded-lg font-semibold text-sm">
           Proxmox VE
@@ -78,14 +70,14 @@ export default function HomelabDiagram() {
             <p className="text-orange-400/60 text-[10px]">External Storage</p>
           </div>
         </div>
-        <p className="text-orange-400 text-[10px] font-semibold tracking-wide mt-1.5 mb-0">Storage & Backup</p>
+        <p className="text-orange-400 text-[10px] font-semibold tracking-wide mt-1.5">Storage & Backup</p>
 
         {/* Connector to services */}
         <div className="w-px h-8 bg-border" />
-        <div className="w-[70%] max-w-md h-px bg-border" />
+        <div className="w-[80%] max-w-lg h-px bg-border" />
 
-        {/* Three service columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-lg items-start">
+        {/* Four service columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 w-full max-w-xl items-start">
           {serviceColumns.map((cat) => {
             const colors = getColorClasses(cat.color);
             return (
