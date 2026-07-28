@@ -23,6 +23,12 @@ const serviceColumns = [
   },
 ];
 
+// Mobile layout: row 1 = Networking + Monitoring, row 2 = Media + Productivity
+const mobileRows = [
+  [serviceColumns[0], serviceColumns[2]], // Networking, Monitoring
+  [serviceColumns[1], serviceColumns[3]], // Media, Productivity
+];
+
 function getColorClasses(color: string) {
   switch (color) {
     case "green": return { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400" };
@@ -31,6 +37,30 @@ function getColorClasses(color: string) {
     case "cyan": return { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400" };
     default: return { bg: "bg-surface-light", border: "border-border", text: "text-text-secondary" };
   }
+}
+
+function ServiceColumn({ cat }: { cat: typeof serviceColumns[0] }) {
+  const colors = getColorClasses(cat.color);
+  return (
+    <div className="flex flex-col items-center">
+      <div className="flex items-center gap-1.5 mb-3">
+        <span className={`w-2 h-2 rounded-full ${colors.bg} ${colors.border} border`} />
+        <p className={`text-xs font-semibold tracking-wide ${colors.text}`}>
+          {cat.title}
+        </p>
+      </div>
+      <div className="flex flex-col gap-1.5 w-full">
+        {cat.services.map((service) => (
+          <div
+            key={service}
+            className={`${colors.bg} ${colors.border} ${colors.text} border rounded-lg px-2 py-1.5 text-[11px] font-medium text-center transition-all duration-200 hover:brightness-110`}
+          >
+            {service}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default function HomelabDiagram() {
@@ -75,37 +105,42 @@ export default function HomelabDiagram() {
         {/* Connector to services */}
         <div className="w-px h-10 bg-border" />
 
-        {/* Four service columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 w-full max-w-xl items-start">
+        {/* Desktop: 4 columns with horizontal branch */}
+        <div className="hidden sm:grid sm:grid-cols-4 gap-5 w-full max-w-xl items-start">
           {serviceColumns.map((cat, i) => {
-            const colors = getColorClasses(cat.color);
             const isFirst = i === 0;
             const isLast = i === serviceColumns.length - 1;
             return (
               <div key={cat.title} className="flex flex-col items-center relative">
-                {/* Horizontal line segment above each column */}
                 <div className={`absolute top-0 h-px bg-border ${isFirst ? "left-1/2 right-0" : isLast ? "left-0 right-1/2" : "left-0 right-0"}`} />
-                {/* Vertical connector */}
                 <div className="w-px h-5 bg-border" />
-                <div className="flex items-center gap-1.5 mb-3">
-                  <span className={`w-2 h-2 rounded-full ${colors.bg} ${colors.border} border`} />
-                  <p className={`text-xs font-semibold tracking-wide ${colors.text}`}>
-                    {cat.title}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-1.5 w-full">
-                  {cat.services.map((service) => (
-                    <div
-                      key={service}
-                      className={`${colors.bg} ${colors.border} ${colors.text} border rounded-lg px-2 py-1.5 text-[11px] font-medium text-center transition-all duration-200 hover:brightness-110`}
-                    >
-                      {service}
-                    </div>
-                  ))}
-                </div>
+                <ServiceColumn cat={cat} />
               </div>
             );
           })}
+        </div>
+
+        {/* Mobile: 2×2 with row-based branching */}
+        <div className="sm:hidden w-full space-y-6">
+          {mobileRows.map((row, rowIdx) => (
+            <div key={rowIdx}>
+              {/* Branch line for this row */}
+              {rowIdx > 0 && <div className="w-px h-4 bg-border mx-auto" />}
+              <div className="grid grid-cols-2 gap-5 relative">
+                {row.map((cat, i) => {
+                  const isFirst = i === 0;
+                  const isLast = i === row.length - 1;
+                  return (
+                    <div key={cat.title} className="flex flex-col items-center relative">
+                      <div className={`absolute top-0 h-px bg-border ${isFirst ? "left-1/2 right-0" : isLast ? "left-0 right-1/2" : "left-0 right-0"}`} />
+                      <div className="w-px h-5 bg-border" />
+                      <ServiceColumn cat={cat} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
