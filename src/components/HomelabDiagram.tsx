@@ -1,11 +1,6 @@
 "use client";
 
-const categories = [
-  {
-    title: "Networking",
-    color: "green",
-    services: ["AdGuard Home", "Nginx Proxy Manager"],
-  },
+const serviceColumns = [
   {
     title: "Media",
     color: "blue",
@@ -21,20 +16,13 @@ const categories = [
     color: "cyan",
     services: ["Paperless-ngx", "Wiki.js", "Vikunja", "Homarr", "Stirling PDF", "ChangeDetection"],
   },
-  {
-    title: "Storage & Backup",
-    color: "orange",
-    services: ["Proxmox Backup Server", "NAS"],
-  },
 ];
 
 function getColorClasses(color: string) {
   switch (color) {
-    case "green": return { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400" };
     case "blue": return { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400" };
     case "yellow": return { bg: "bg-yellow-500/10", border: "border-yellow-500/30", text: "text-yellow-400" };
     case "cyan": return { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400" };
-    case "orange": return { bg: "bg-orange-500/10", border: "border-orange-500/30", text: "text-orange-400" };
     default: return { bg: "bg-surface-light", border: "border-border", text: "text-text-secondary" };
   }
 }
@@ -75,29 +63,40 @@ export default function HomelabDiagram() {
         <div className="bg-purple-500/10 border border-purple-500/30 text-purple-400 px-5 py-3 rounded-lg font-semibold text-sm">
           Proxmox VE
         </div>
+        <div className="w-px h-5 bg-border" />
+        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
-        {/* Connector to columns */}
+        {/* Storage & Backup block */}
+        <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg px-6 py-4 flex items-center gap-4 transition-all duration-200 hover:brightness-110">
+          <div className="text-center">
+            <p className="text-orange-400 font-semibold text-xs">PBS</p>
+            <p className="text-orange-400/60 text-[10px]">Backup Server</p>
+          </div>
+          <div className="w-px h-8 bg-orange-500/30" />
+          <div className="text-center">
+            <p className="text-orange-400 font-semibold text-xs">NAS</p>
+            <p className="text-orange-400/60 text-[10px]">External Storage</p>
+          </div>
+        </div>
+        <p className="text-orange-400 text-[10px] font-semibold tracking-wide mt-1.5 mb-0">Storage & Backup</p>
+
+        {/* Connector to services */}
         <div className="w-px h-8 bg-border" />
-        <div className="w-[80%] max-w-xl h-px bg-border" />
+        <div className="w-[70%] max-w-md h-px bg-border" />
 
-        {/* Five category columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 w-full items-start">
-          {categories.map((cat) => {
+        {/* Three service columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-lg items-start">
+          {serviceColumns.map((cat) => {
             const colors = getColorClasses(cat.color);
             return (
               <div key={cat.title} className="flex flex-col items-center">
-                {/* Vertical connector */}
                 <div className="w-px h-5 bg-border" />
-
-                {/* Category heading */}
                 <div className="flex items-center gap-1.5 mb-3">
                   <span className={`w-2 h-2 rounded-full ${colors.bg} ${colors.border} border`} />
                   <p className={`text-xs font-semibold tracking-wide ${colors.text}`}>
                     {cat.title}
                   </p>
                 </div>
-
-                {/* Services stack */}
                 <div className="flex flex-col gap-1.5 w-full">
                   {cat.services.map((service) => (
                     <div
@@ -118,11 +117,11 @@ export default function HomelabDiagram() {
       <div className="mt-10 pt-6 border-t border-border flex flex-wrap gap-4 justify-center">
         {[
           { color: "bg-green-500/30 border-green-500/50", label: "Networking" },
+          { color: "bg-purple-500/30 border-purple-500/50", label: "Infrastructure" },
+          { color: "bg-orange-500/30 border-orange-500/50", label: "Storage & Backup" },
           { color: "bg-blue-500/30 border-blue-500/50", label: "Media" },
           { color: "bg-yellow-500/30 border-yellow-500/50", label: "Monitoring" },
           { color: "bg-cyan-500/30 border-cyan-500/50", label: "Productivity" },
-          { color: "bg-orange-500/30 border-orange-500/50", label: "Storage & Backup" },
-          { color: "bg-purple-500/30 border-purple-500/50", label: "Infrastructure" },
         ].map(({ color, label }) => (
           <div key={label} className="flex items-center gap-2 text-xs">
             <div className={`w-3 h-3 rounded border ${color}`} />
