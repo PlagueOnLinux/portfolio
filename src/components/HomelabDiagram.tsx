@@ -73,15 +73,19 @@ export default function HomelabDiagram() {
         <p className="text-orange-400 text-[10px] font-semibold tracking-wide mt-1.5">Storage & Backup</p>
 
         {/* Connector to services */}
-        <div className="w-px h-8 bg-border" />
-        <div className="w-[80%] max-w-lg h-px bg-border" />
+        <div className="w-px h-10 bg-border" />
 
         {/* Four service columns */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-5 w-full max-w-xl items-start">
-          {serviceColumns.map((cat) => {
+          {serviceColumns.map((cat, i) => {
             const colors = getColorClasses(cat.color);
+            const isFirst = i === 0;
+            const isLast = i === serviceColumns.length - 1;
             return (
-              <div key={cat.title} className="flex flex-col items-center">
+              <div key={cat.title} className="flex flex-col items-center relative">
+                {/* Horizontal line segment above each column */}
+                <div className={`absolute top-0 h-px bg-border ${isFirst ? "left-1/2 right-0" : isLast ? "left-0 right-1/2" : "left-0 right-0"}`} />
+                {/* Vertical connector */}
                 <div className="w-px h-5 bg-border" />
                 <div className="flex items-center gap-1.5 mb-3">
                   <span className={`w-2 h-2 rounded-full ${colors.bg} ${colors.border} border`} />
