@@ -35,7 +35,7 @@ export default function HomelabPage() {
           <p className="text-text-secondary mt-1">Self-hosted infrastructure built on Proxmox VE and Linux.</p>
           <span className="status-badge status-active mt-3 inline-flex">
             <span className="w-1.5 h-1.5 rounded-full bg-current" />
-            Active Infrastructure
+            Active
           </span>
         </div>
       </div>
@@ -146,12 +146,9 @@ export default function HomelabPage() {
       </section>
 
       {/* CTA */}
-      <div className="mt-12">
-        <Link href="/projects" className="btn-outline">
-          Explore More Projects
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+      <div className="mt-12 flex flex-wrap gap-3">
+        <Link href="/contact" className="btn-primary">
+          Get in Touch
         </Link>
       </div>
     </div>
