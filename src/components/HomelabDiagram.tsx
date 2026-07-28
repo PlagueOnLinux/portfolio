@@ -60,22 +60,28 @@ export default function HomelabDiagram() {
           Proxmox VE
         </div>
 
-        {/* Connection lines to columns */}
-        <div className="w-px h-5 bg-border" />
+        {/* Vertical line from Proxmox to horizontal connector */}
+        <div className="w-px h-8 bg-border" />
+
+        {/* Horizontal connector line */}
+        <div className="w-[80%] max-w-xl h-px bg-border" />
 
         {/* Category columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 w-full mt-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 w-full mt-0 items-start">
           {categories.map((cat) => {
             const colors = getColorClasses(cat.color);
             return (
               <div key={cat.title} className="flex flex-col items-center">
-                {/* Connection dot */}
-                <div className={`w-2 h-2 rounded-full ${colors.bg} ${colors.border} border mb-3`} />
+                {/* Vertical connector from horizontal line to heading */}
+                <div className={`w-px h-5 bg-border`} />
 
-                {/* Category title */}
-                <p className={`text-[10px] font-mono uppercase tracking-wider mb-3 ${colors.text}`}>
-                  {cat.title}
-                </p>
+                {/* Category heading */}
+                <div className="flex items-center gap-1.5 mb-3">
+                  <span className={`w-2 h-2 rounded-full ${colors.bg} ${colors.border} border`} />
+                  <p className={`text-xs font-semibold tracking-wide ${colors.text}`}>
+                    {cat.title}
+                  </p>
+                </div>
 
                 {/* Services stack */}
                 <div className="flex flex-col gap-1.5 w-full">
