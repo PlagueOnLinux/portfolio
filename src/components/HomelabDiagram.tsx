@@ -29,7 +29,6 @@ function getServiceNodeStyle(id: string) {
 }
 
 export default function HomelabDiagram() {
-
   return (
     <div className="glass-card p-6 md:p-10">
       <div className="flex flex-col items-center gap-0">
@@ -47,46 +46,50 @@ export default function HomelabDiagram() {
         <div className="w-px h-6 bg-border" />
         <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
+        {/* AdGuard */}
+        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 hover:brightness-110">
+          AdGuard Home
+        </div>
+        <div className="w-px h-6 bg-border" />
+        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
+
+        {/* Nginx */}
+        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 hover:brightness-110">
+          Nginx Proxy Manager
+        </div>
+        <div className="w-px h-6 bg-border" />
+        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
+
         {/* Proxmox */}
         <div className="bg-purple-500/10 border border-purple-500/30 text-purple-400 px-5 py-3 rounded-lg font-semibold text-sm transition-all duration-200 hover:brightness-110">
           Proxmox VE
         </div>
-
-        {/* Branch: Services | NAS | PBS */}
         <div className="w-px h-6 bg-border" />
+        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
-        <div className="flex items-start gap-6 md:gap-10 w-full max-w-3xl">
-          {/* NAS branch */}
-          <div className="flex flex-col items-center flex-shrink-0">
-            <svg width="10" height="6" viewBox="0 0 10 6" className="text-border mb-1"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
-            <div className="bg-orange-500/10 border border-orange-500/30 text-orange-400 px-3 py-2 rounded-lg font-medium text-xs transition-all duration-200 hover:brightness-110 text-center">
-              <p className="font-semibold">NAS</p>
-              <p className="text-[10px] mt-0.5 opacity-70">External Storage</p>
-            </div>
+        {/* Infrastructure components: NAS + PBS */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="bg-orange-500/10 border border-orange-500/30 text-orange-400 px-3 py-2 rounded-lg font-medium text-xs text-center transition-all duration-200 hover:brightness-110">
+            <p className="font-semibold">NAS</p>
+            <p className="text-[10px] mt-0.5 opacity-70">External Storage</p>
           </div>
-
-          {/* Services (center, largest) */}
-          <div className="flex-1">
-            <svg width="10" height="6" viewBox="0 0 10 6" className="text-border mb-1 mx-auto block"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-              {services.map((service) => (
-                <div
-                  key={service.id}
-                  className={`flex items-center justify-center px-2 py-2.5 rounded-lg border text-xs font-medium text-center transition-all duration-200 ${getServiceNodeStyle(service.id)}`}
-                >
-                  {service.label}
-                </div>
-              ))}
-            </div>
+          <div className="bg-orange-500/10 border border-orange-500/30 text-orange-400 px-3 py-2 rounded-lg font-medium text-xs text-center transition-all duration-200 hover:brightness-110">
+            <p className="font-semibold">PBS</p>
+            <p className="text-[10px] mt-0.5 opacity-70">Weekly Backups</p>
           </div>
+        </div>
 
-          {/* PBS branch */}
-          <div className="flex flex-col items-center flex-shrink-0">
-            <svg width="10" height="6" viewBox="0 0 10 6" className="text-border mb-1"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
-            <div className="bg-orange-500/10 border border-orange-500/30 text-orange-400 px-3 py-2 rounded-lg font-medium text-xs transition-all duration-200 hover:brightness-110 text-center">
-              <p className="font-semibold">PBS</p>
-              <p className="text-[10px] mt-0.5 opacity-70">Backup Server</p>
-            </div>
+        {/* Services grid */}
+        <div className="w-full max-w-2xl">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className={`flex items-center justify-center px-2 py-2.5 rounded-lg border text-xs font-medium text-center transition-all duration-200 ${getServiceNodeStyle(service.id)}`}
+              >
+                {service.label}
+              </div>
+            ))}
           </div>
         </div>
       </div>
