@@ -1,108 +1,108 @@
 "use client";
 
-const services = [
-  { id: "jellyfin", label: "Jellyfin" },
-  { id: "immich", label: "Immich" },
-  { id: "media-stack", label: "Media Stack" },
-  { id: "music-stack", label: "Navidrome" },
-  { id: "uptime-kuma", label: "Uptime Kuma" },
-  { id: "pulse", label: "Pulse" },
-  { id: "beszel", label: "Beszel" },
-  { id: "scrutiny", label: "Scrutiny" },
-  { id: "paperless", label: "Paperless-ngx" },
-  { id: "wikijs", label: "Wiki.js" },
-  { id: "vikunja", label: "Vikunja" },
-  { id: "homarr", label: "Homarr" },
-  { id: "stirling-pdf", label: "Stirling PDF" },
-  { id: "changedetection", label: "ChangeDetection" },
+const categories = [
+  {
+    title: "Networking",
+    color: "green",
+    services: ["AdGuard Home", "Nginx Proxy Manager"],
+  },
+  {
+    title: "Media",
+    color: "blue",
+    services: ["Jellyfin", "Immich", "Media Stack", "Navidrome"],
+  },
+  {
+    title: "Monitoring",
+    color: "yellow",
+    services: ["Uptime Kuma", "Pulse", "Beszel", "Scrutiny"],
+  },
+  {
+    title: "Productivity",
+    color: "cyan",
+    services: ["Paperless-ngx", "Wiki.js", "Vikunja", "Homarr", "Stirling PDF", "ChangeDetection"],
+  },
+  {
+    title: "Storage & Backup",
+    color: "orange",
+    services: ["PBS", "NAS"],
+  },
 ];
 
-function getServiceNodeStyle(id: string) {
-  const mediaServices = ["jellyfin", "immich", "media-stack", "music-stack"];
-  const monitoringServices = ["uptime-kuma", "pulse", "beszel", "scrutiny"];
-  const productivityServices = ["paperless", "wikijs", "vikunja", "homarr", "stirling-pdf", "changedetection"];
-
-  if (mediaServices.includes(id)) return "bg-blue-500/10 border-blue-500/30 text-blue-400 hover:brightness-110";
-  if (monitoringServices.includes(id)) return "bg-yellow-500/10 border-yellow-500/30 text-yellow-400 hover:brightness-110";
-  if (productivityServices.includes(id)) return "bg-cyan-500/10 border-cyan-500/30 text-cyan-400 hover:brightness-110";
-  return "bg-surface-light border-border text-text-secondary hover:brightness-110";
+function getColorClasses(color: string) {
+  switch (color) {
+    case "green": return { bg: "bg-green-500/10", border: "border-green-500/30", text: "text-green-400" };
+    case "blue": return { bg: "bg-blue-500/10", border: "border-blue-500/30", text: "text-blue-400" };
+    case "yellow": return { bg: "bg-yellow-500/10", border: "border-yellow-500/30", text: "text-yellow-400" };
+    case "cyan": return { bg: "bg-cyan-500/10", border: "border-cyan-500/30", text: "text-cyan-400" };
+    case "orange": return { bg: "bg-orange-500/10", border: "border-orange-500/30", text: "text-orange-400" };
+    default: return { bg: "bg-surface-light", border: "border-border", text: "text-text-secondary" };
+  }
 }
 
 export default function HomelabDiagram() {
   return (
     <div className="glass-card p-6 md:p-10">
-      <div className="flex flex-col items-center gap-0">
-        {/* Internet */}
-        <div className="bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 hover:brightness-110">
+      <div className="flex flex-col items-center">
+        {/* Top chain: Internet → Router → Proxmox */}
+        <div className="bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-2.5 rounded-lg font-medium text-sm">
           Internet
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-5 bg-border" />
         <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
-        {/* Router */}
-        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 hover:brightness-110">
+        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm">
           TP-Link Archer C6
         </div>
-        <div className="w-px h-6 bg-border" />
+        <div className="w-px h-5 bg-border" />
         <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
-        {/* AdGuard */}
-        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 hover:brightness-110">
-          AdGuard Home
-        </div>
-        <div className="w-px h-6 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
-
-        {/* Nginx */}
-        <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 hover:brightness-110">
-          Nginx Proxy Manager
-        </div>
-        <div className="w-px h-6 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
-
-        {/* Proxmox */}
-        <div className="bg-purple-500/10 border border-purple-500/30 text-purple-400 px-5 py-3 rounded-lg font-semibold text-sm transition-all duration-200 hover:brightness-110">
+        <div className="bg-purple-500/10 border border-purple-500/30 text-purple-400 px-5 py-3 rounded-lg font-semibold text-sm">
           Proxmox VE
         </div>
-        <div className="w-px h-6 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
-        {/* Infrastructure components: NAS + PBS */}
-        <div className="flex items-center gap-3 mb-6">
-          <div className="bg-orange-500/10 border border-orange-500/30 text-orange-400 px-3 py-2 rounded-lg font-medium text-xs text-center transition-all duration-200 hover:brightness-110">
-            <p className="font-semibold">NAS</p>
-            <p className="text-[10px] mt-0.5 opacity-70">External Storage</p>
-          </div>
-          <div className="bg-orange-500/10 border border-orange-500/30 text-orange-400 px-3 py-2 rounded-lg font-medium text-xs text-center transition-all duration-200 hover:brightness-110">
-            <p className="font-semibold">PBS</p>
-            <p className="text-[10px] mt-0.5 opacity-70">Weekly Backups</p>
-          </div>
-        </div>
+        {/* Connection lines to columns */}
+        <div className="w-px h-5 bg-border" />
 
-        {/* Services grid */}
-        <div className="w-full max-w-2xl">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className={`flex items-center justify-center px-2 py-2.5 rounded-lg border text-xs font-medium text-center transition-all duration-200 ${getServiceNodeStyle(service.id)}`}
-              >
-                {service.label}
+        {/* Category columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 w-full mt-1">
+          {categories.map((cat) => {
+            const colors = getColorClasses(cat.color);
+            return (
+              <div key={cat.title} className="flex flex-col items-center">
+                {/* Connection dot */}
+                <div className={`w-2 h-2 rounded-full ${colors.bg} ${colors.border} border mb-3`} />
+
+                {/* Category title */}
+                <p className={`text-[10px] font-mono uppercase tracking-wider mb-3 ${colors.text}`}>
+                  {cat.title}
+                </p>
+
+                {/* Services stack */}
+                <div className="flex flex-col gap-1.5 w-full">
+                  {cat.services.map((service) => (
+                    <div
+                      key={service}
+                      className={`${colors.bg} ${colors.border} ${colors.text} border rounded-lg px-2 py-1.5 text-[11px] font-medium text-center transition-all duration-200 hover:brightness-110`}
+                    >
+                      {service}
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </div>
 
       {/* Legend */}
       <div className="mt-10 pt-6 border-t border-border flex flex-wrap gap-4 justify-center">
         {[
+          { color: "bg-green-500/30 border-green-500/50", label: "Networking" },
           { color: "bg-blue-500/30 border-blue-500/50", label: "Media" },
           { color: "bg-yellow-500/30 border-yellow-500/50", label: "Monitoring" },
           { color: "bg-cyan-500/30 border-cyan-500/50", label: "Productivity" },
-          { color: "bg-green-500/30 border-green-500/50", label: "Networking" },
+          { color: "bg-orange-500/30 border-orange-500/50", label: "Storage & Backup" },
           { color: "bg-purple-500/30 border-purple-500/50", label: "Infrastructure" },
-          { color: "bg-orange-500/30 border-orange-500/50", label: "Storage / Backup" },
         ].map(({ color, label }) => (
           <div key={label} className="flex items-center gap-2 text-xs">
             <div className={`w-3 h-3 rounded border ${color}`} />
