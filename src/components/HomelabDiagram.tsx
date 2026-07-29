@@ -71,22 +71,22 @@ export default function HomelabDiagram() {
         <div className="bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-2.5 rounded-lg font-medium text-sm">
           Internet
         </div>
-        <div className="w-px h-5 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
+        <div className="w-px h-4 bg-border mt-3" />
+        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border mb-3"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
         {/* Router */}
         <div className="bg-green-500/10 border border-green-500/30 text-green-400 px-4 py-2.5 rounded-lg font-medium text-sm">
           TP-Link Archer C6
         </div>
-        <div className="w-px h-5 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
+        <div className="w-px h-4 bg-border mt-3" />
+        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border mb-3"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
         {/* Proxmox */}
         <div className="bg-purple-500/10 border border-purple-500/30 text-purple-400 px-5 py-3 rounded-lg font-semibold text-sm">
           Proxmox VE
         </div>
-        <div className="w-px h-5 bg-border" />
-        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
+        <div className="w-px h-4 bg-border mt-3" />
+        <svg width="10" height="6" viewBox="0 0 10 6" className="text-border mb-3"><path d="M5 6L0 0h10L5 6z" fill="currentColor" /></svg>
 
         {/* Storage & Backup block */}
         <div className="bg-orange-500/10 border border-orange-500/30 rounded-lg px-6 py-4 flex items-center gap-4 transition-all duration-200 hover:brightness-110">
@@ -103,7 +103,7 @@ export default function HomelabDiagram() {
         <p className="text-orange-400 text-[10px] font-semibold tracking-wide mt-1.5">Storage & Backup</p>
 
         {/* Connector to services */}
-        <div className="w-px h-10 bg-border" />
+        <div className="w-px h-4 bg-border mt-3" />
 
         {/* Desktop: 4 columns with horizontal branch */}
         <div className="hidden sm:grid sm:grid-cols-4 gap-5 w-full max-w-xl items-start">
