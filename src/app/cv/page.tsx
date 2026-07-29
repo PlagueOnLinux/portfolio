@@ -17,7 +17,18 @@ export default function CVPage() {
       <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
         {/* English */}
         <div className="glass-card flex flex-col items-center text-center p-8">
-          <span className="text-4xl mb-4">🇬🇧</span>
+          <div className="w-14 h-14 rounded-full border border-border bg-surface-light flex items-center justify-center mb-4 shadow-sm">
+            <svg width="32" height="32" viewBox="0 0 60 30">
+              <clipPath id="gb"><circle cx="30" cy="15" r="15"/></clipPath>
+              <g clipPath="url(#gb)">
+                <rect width="60" height="30" fill="#012169"/>
+                <path d="M0 0L60 30M60 0L0 30" stroke="#fff" strokeWidth="6"/>
+                <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" strokeWidth="4" clipPath="url(#gb)"/>
+                <path d="M30 0v30M0 15h60" stroke="#fff" strokeWidth="10"/>
+                <path d="M30 0v30M0 15h60" stroke="#C8102E" strokeWidth="6"/>
+              </g>
+            </svg>
+          </div>
           <h2 className="text-xl font-semibold text-text-primary mb-2">English</h2>
           <p className="text-text-secondary text-sm mb-8">
             Full CV in English — professional experience, technical projects, and skills.
@@ -50,7 +61,15 @@ export default function CVPage() {
 
         {/* Polish */}
         <div className="glass-card flex flex-col items-center text-center p-8">
-          <span className="text-4xl mb-4">🇵🇱</span>
+          <div className="w-14 h-14 rounded-full border border-border bg-surface-light flex items-center justify-center mb-4 shadow-sm">
+            <svg width="32" height="32" viewBox="0 0 60 30">
+              <clipPath id="pl"><circle cx="30" cy="15" r="15"/></clipPath>
+              <g clipPath="url(#pl)">
+                <rect width="60" height="15" fill="#fff"/>
+                <rect y="15" width="60" height="15" fill="#DC143C"/>
+              </g>
+            </svg>
+          </div>
           <h2 className="text-xl font-semibold text-text-primary mb-2">Polski</h2>
           <p className="text-text-secondary text-sm mb-8">
             CV po polsku — doświadczenie zawodowe, projekty techniczne i umiejętności.
