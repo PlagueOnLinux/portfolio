@@ -36,7 +36,7 @@ export default function ContactPage() {
           </div>
           <div className="flex-1">
             <p className="text-sm text-text-secondary">{t("contact.email.label")}</p>
-            <p className="text-text-primary font-medium group-hover:text-accent transition-colors">
+            <p className="text-text-primary font-medium group-hover:text-accent group-hover:underline transition-all duration-200">
               bledowskimaciej@gmail.com
             </p>
           </div>
@@ -67,7 +67,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="text-sm text-text-secondary">LinkedIn</p>
-            <p className="text-text-primary font-medium group-hover:text-accent transition-colors">
+            <p className="text-text-primary font-medium group-hover:text-accent group-hover:underline transition-all duration-200">
               linkedin.com/in/maciejbledowski
             </p>
           </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="text-sm text-text-secondary">GitHub</p>
-            <p className="text-text-primary font-medium group-hover:text-accent transition-colors">
+            <p className="text-text-primary font-medium group-hover:text-accent group-hover:underline transition-all duration-200">
               github.com/PlagueOnLinux
             </p>
           </div>
@@ -114,13 +114,6 @@ export default function ContactPage() {
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           {t("contact.remote")}
         </span>
-      </div>
-
-      {/* CTA */}
-      <div className="mt-14">
-        <a href="mailto:bledowskimaciej@gmail.com" className="btn-primary">
-          {t("contact.cta")}
-        </a>
       </div>
 
       {/* Toast */}
