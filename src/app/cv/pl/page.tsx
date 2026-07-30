@@ -44,7 +44,7 @@ export default function CVPolishPage() {
         <Link href="/cv" className="text-text-secondary hover:text-accent transition-colors text-sm">
           &larr; Wróć do CV
         </Link>
-        <a href="/CV_MaciejBledowski_PL.pdf" download className="btn-primary self-start">
+        <a href="/CV_MaciejBledowski_PL.pdf" download className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-black rounded-lg font-medium hover:bg-accent-hover transition-colors duration-200 self-start">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
           </svg>
@@ -54,7 +54,7 @@ export default function CVPolishPage() {
 
       <div className="max-w-3xl">
         {/* Header */}
-        <section className="mb-12">
+        <section className="mb-14">
           <div className="glass-card p-8">
             <h1 className="text-2xl font-bold text-text-primary mb-1">{personalInfo.displayName}</h1>
             <p className="text-accent font-medium text-lg mb-1">{personalInfo.role}</p>
@@ -68,7 +68,7 @@ export default function CVPolishPage() {
         </section>
 
         {/* Podsumowanie */}
-        <section className="mb-12">
+        <section className="mb-14">
           <h2 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
             <span className="text-accent font-mono text-sm">01.</span>Podsumowanie
           </h2>
@@ -78,7 +78,7 @@ export default function CVPolishPage() {
         </section>
 
         {/* Doświadczenie */}
-        <section className="mb-12">
+        <section className="mb-14">
           <h2 className="text-lg font-semibold text-text-primary mb-6 flex items-center gap-2">
             <span className="text-accent font-mono text-sm">02.</span>Doświadczenie zawodowe
           </h2>
@@ -99,16 +99,16 @@ export default function CVPolishPage() {
         </section>
 
         {/* Technologie */}
-        <section className="mb-12">
+        <section className="mb-14">
           <h2 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
             <span className="text-accent font-mono text-sm">03.</span>Technologie i kompetencje
           </h2>
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="glass-card">
               <h3 className="text-text-primary font-medium text-sm mb-3">Technologie</h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
                 {["Windows / Linux / macOS", "Intune / Jamf Pro", "Active Directory / Okta", "Proxmox / Docker", "ServiceNow / ServiceDesk Plus"].map((t) => (
-                  <span key={t} className="tag">{t}</span>
+                  <span key={t} className="inline-block px-3.5 py-1.5 text-xs font-medium rounded-full bg-surface-light text-text-secondary border border-border">{t}</span>
                 ))}
               </div>
             </div>
@@ -126,17 +126,25 @@ export default function CVPolishPage() {
         </section>
 
         {/* Certyfikaty */}
-        <section className="mb-12">
+        <section className="mb-14">
           <h2 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
             <span className="text-accent font-mono text-sm">04.</span>Certyfikaty
           </h2>
           <div className="glass-card">
-            <span className="tag">Google Cybersecurity Professional Certificate</span>
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center flex-shrink-0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+              </div>
+              <span className="text-text-primary text-sm font-medium">Google Cybersecurity Professional Certificate</span>
+            </div>
           </div>
         </section>
 
         {/* Wykształcenie */}
-        <section className="mb-12">
+        <section className="mb-14">
           <h2 className="text-lg font-semibold text-text-primary mb-4 flex items-center gap-2">
             <span className="text-accent font-mono text-sm">05.</span>Wykształcenie
           </h2>
