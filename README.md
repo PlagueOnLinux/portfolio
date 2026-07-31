@@ -43,6 +43,7 @@ More than a personal website — this project serves as a central hub for presen
 | Styling | Tailwind CSS |
 | Hosting | Vercel |
 | Analytics | Vercel Analytics |
+| Deployment | GitHub + Vercel CI/CD |
 
 ---
 
@@ -77,15 +78,12 @@ npm run start
 
 ```
 src/
-├── app/
-│   ├── hiremate/
-│   ├── homelab/
-│   ├── cv/
-│   ├── projects/
-│   └── contact/
-├── components/
-├── data/
-└── context/
+├── app/          # Next.js App Router pages
+├── components/   # Reusable UI components
+├── context/      # React context providers
+├── data/         # Static content & configuration
+└── i18n/         # Translation strings
+public/           # Static assets & CV files
 ```
 
 ---
@@ -98,19 +96,25 @@ graph LR
     B --> C[maciejbledowski.pl]
 ```
 
-Every push to `main` triggers an automatic production deployment.
+Every push to the `main` branch automatically triggers a production deployment through Vercel, ensuring the live portfolio stays up to date.
 
 ---
 
 ## Roadmap
 
-- [x] Homepage with professional hero section
-- [x] Dedicated project pages
+### Completed
+
+- [x] Responsive homepage with professional hero section
+- [x] Dedicated project pages (HireMate, HomeLab)
 - [x] Interactive HomeLab architecture diagram
-- [x] CV page with language selection
+- [x] CV page with English and Polish versions
 - [x] Contact page with clipboard integration
-- [ ] Blog / technical notes
+
+### Planned
+
+- [ ] Technical blog / notes
 - [ ] Case studies
+- [ ] Additional project documentation
 
 ---
 
@@ -135,4 +139,4 @@ IT Support Engineer
 
 ## Project Philosophy
 
-This repository is maintained as a long-term project rather than a one-time portfolio. It evolves alongside my professional experience, software projects, and self-hosted infrastructure — serving as a central place to document technical work and continuous learning.
+This repository is continuously maintained and evolves alongside my professional experience, software projects, and self-hosted infrastructure. It serves as a central place to document technical work, share knowledge, and track my growth as an engineer over time.
