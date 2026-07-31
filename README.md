@@ -13,13 +13,13 @@
 
 https://maciejbledowski.pl
 
-Explore the production version of the portfolio.
+Explore the latest production deployment of the portfolio, automatically updated through Vercel with every push to the main branch.
 
 ---
 
 ## Overview
 
-More than a personal website — this project serves as a central hub for presenting active software projects, documenting self-hosted infrastructure, and showcasing professional experience in a format that goes beyond a traditional CV.
+This repository serves as a central hub for showcasing active software projects, documenting self-hosted infrastructure, and presenting professional experience in a format that goes beyond a traditional CV.
 
 ---
 
@@ -96,7 +96,7 @@ graph LR
     B --> C[maciejbledowski.pl]
 ```
 
-Every push to the `main` branch automatically triggers a production deployment through Vercel, ensuring the live portfolio stays up to date.
+Every push to the `main` branch automatically triggers a production deployment through Vercel.
 
 ---
 
@@ -139,4 +139,4 @@ IT Support Engineer
 
 ## Project Philosophy
 
-This repository is continuously maintained and evolves alongside my professional experience, software projects, and self-hosted infrastructure. It serves as a central place to document technical work, share knowledge, and track my growth as an engineer over time.
+This repository evolves alongside my professional experience and serves as a central place for documenting software projects, homelab infrastructure, and continuous learning. It is actively maintained and expanded as new technologies, projects, and ideas emerge.
