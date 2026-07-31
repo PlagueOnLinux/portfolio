@@ -1,3 +1,6 @@
+"use client";
+
+import { useRouter } from "next/navigation";
 import { Project } from "@/data/projects";
 
 function getStatusClasses(status: Project["status"]) {
@@ -9,9 +12,28 @@ function getStatusClasses(status: Project["status"]) {
   }
 }
 
+function getProjectHref(project: Project): string | null {
+  if (project.links.live && project.links.live.startsWith("/")) return project.links.live;
+  return null;
+}
+
 export default function ProjectCard({ project }: { project: Project }) {
+  const router = useRouter();
+  const href = getProjectHref(project);
+
+  const handleClick = () => {
+    if (href) router.push(href);
+  };
+
+  const handleGitHubClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="glass-card group flex flex-col h-full">
+    <div
+      onClick={handleClick}
+      className={`glass-card group flex flex-col h-full ${href ? "cursor-pointer" : ""}`}
+    >
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <span className={`status-badge ${getStatusClasses(project.status)}`}>
@@ -19,42 +41,49 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.status}
         </span>
 
-        {/* Links */}
-        <div className="flex items-center gap-2">
-          {project.links.github && (
-            <a href={project.links.github} target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-accent transition-colors" aria-label={`${project.name} on GitHub`}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
-          )}
-          {project.links.live && (
-            <a href={project.links.live} {...(project.links.live.startsWith("/") ? {} : { target: "_blank", rel: "noopener noreferrer" })} className="text-text-secondary hover:text-accent transition-colors" aria-label={`${project.name} details`}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
-            </a>
-          )}
-        </div>
+        {/* GitHub icon (secondary action) */}
+        {project.links.github && (
+          <a
+            href={project.links.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleGitHubClick}
+            className="text-text-secondary hover:text-accent transition-colors p-1"
+            aria-label={`${project.name} on GitHub`}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+        )}
       </div>
 
-      {/* Title */}
-      <h3 className="text-text-primary font-semibold text-xl mb-2 group-hover:text-accent transition-colors">
-        {project.name}
-      </h3>
+      {/* Title + Description */}
+      <div className="flex-1">
+        <h3 className="text-text-primary font-semibold text-xl mb-2 group-hover:text-accent transition-colors">
+          {project.name}
+        </h3>
+        <p className="text-text-secondary text-sm leading-relaxed mb-5">
+          {project.description}
+        </p>
+      </div>
 
-      {/* Description */}
-      <p className="text-text-secondary text-sm leading-relaxed mb-5 flex-1">
-        {project.description}
-      </p>
+      {/* Bottom: Tags + Chevron */}
+      <div className="flex items-end justify-between mt-auto">
+        <div className="flex flex-wrap gap-1.5">
+          {project.technologies.slice(0, 5).map((tech) => (
+            <span key={tech} className="inline-block px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-light text-text-secondary border border-border">
+              {tech}
+            </span>
+          ))}
+        </div>
 
-      {/* Technologies */}
-      <div className="flex flex-wrap gap-1.5 mt-auto">
-        {project.technologies.slice(0, 5).map((tech) => (
-          <span key={tech} className="inline-block px-2 py-0.5 text-[10px] font-medium rounded-full bg-surface-light text-text-secondary border border-border">
-            {tech}
-          </span>
-        ))}
+        {/* ChevronRight indicator */}
+        {href && (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-text-secondary group-hover:text-accent transition-colors duration-200 flex-shrink-0 ml-3">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        )}
       </div>
     </div>
   );
