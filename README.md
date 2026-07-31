@@ -7,7 +7,13 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=flat-square&logo=vercel)](https://maciejbledowski.pl)
 
-**[maciejbledowski.pl](https://maciejbledowski.pl)**
+---
+
+## Live Demo
+
+https://maciejbledowski.pl
+
+Explore the production version of the portfolio.
 
 ---
 
@@ -42,16 +48,23 @@ A full-featured technical portfolio designed for IT professionals. More than a p
 
 ## Getting Started
 
+### Installation
+
 ```bash
 git clone https://github.com/PlagueOnLinux/portfolio.git
 cd portfolio
 npm install
+```
+
+### Development
+
+```bash
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-Production build:
+### Production
 
 ```bash
 npm run build
@@ -64,15 +77,15 @@ npm run start
 
 ```
 src/
-├── app/              Pages (App Router)
-│   ├── hiremate/           HireMate project page
-│   ├── homelab/            HomeLab documentation
-│   ├── cv/                 CV selector + EN/PL views
-│   ├── projects/           Projects listing
-│   └── contact/            Contact page
-├── components/       Reusable UI components
-├── data/             Content and configuration
-└── context/          React contexts
+├── app/
+│   ├── hiremate/
+│   ├── homelab/
+│   ├── cv/
+│   ├── projects/
+│   └── contact/
+├── components/
+├── data/
+└── context/
 ```
 
 ---
@@ -109,6 +122,17 @@ Every push to `main` triggers an automatic production deployment.
 
 ## Author
 
-**Maciej Błędowski** — IT Support Engineer
+**Maciej Błędowski**
 
-[Website](https://maciejbledowski.pl) · [LinkedIn](https://linkedin.com/in/maciejbledowski) · [GitHub](https://github.com/PlagueOnLinux) · [Email](mailto:bledowskimaciej@gmail.com)
+IT Support Engineer
+
+- [Website](https://maciejbledowski.pl)
+- [LinkedIn](https://linkedin.com/in/maciejbledowski)
+- [GitHub](https://github.com/PlagueOnLinux)
+- [Email](mailto:bledowskimaciej@gmail.com)
+
+---
+
+## Project Philosophy
+
+This repository is maintained as a long-term project rather than a one-time portfolio. It evolves alongside my professional experience, software projects, and self-hosted infrastructure, serving as a central place to document my technical work and continuous learning.
