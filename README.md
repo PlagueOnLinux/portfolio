@@ -1,6 +1,6 @@
 # maciejbledowski.pl
 
-**Technical portfolio bringing together professional experience, software projects, homelab documentation and career information.**
+**Personal technical portfolio showcasing professional experience, software projects, homelab infrastructure, and continuous learning.**
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
@@ -19,7 +19,7 @@ Explore the production version of the portfolio.
 
 ## Overview
 
-A full-featured technical portfolio designed for IT professionals. More than a personal website — it serves as a central hub for showcasing active projects, documenting self-hosted infrastructure, and presenting professional experience in a format that goes beyond a traditional CV.
+More than a personal website — this project serves as a central hub for presenting active software projects, documenting self-hosted infrastructure, and showcasing professional experience in a format that goes beyond a traditional CV.
 
 ---
 
@@ -30,7 +30,7 @@ A full-featured technical portfolio designed for IT professionals. More than a p
 - Interactive HomeLab architecture diagram
 - English and Polish CV with online view and PDF download
 - SEO optimized with Open Graph metadata
-- Modern component-based architecture with TypeScript
+- Component-based architecture built with TypeScript
 
 ---
 
@@ -135,4 +135,4 @@ IT Support Engineer
 
 ## Project Philosophy
 
-This repository is maintained as a long-term project rather than a one-time portfolio. It evolves alongside my professional experience, software projects, and self-hosted infrastructure, serving as a central place to document my technical work and continuous learning.
+This repository is maintained as a long-term project rather than a one-time portfolio. It evolves alongside my professional experience, software projects, and self-hosted infrastructure — serving as a central place to document technical work and continuous learning.
