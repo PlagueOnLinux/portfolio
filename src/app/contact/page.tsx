@@ -34,7 +34,7 @@ export default function ContactPage() {
         {/* Email */}
         <a
           href="mailto:bledowskimaciej@gmail.com"
-          className="glass-card flex items-center gap-4 group relative"
+          className="glass-card flex items-center gap-4 group"
         >
           <div className="text-accent group-hover:brightness-125 transition-all flex-shrink-0">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -44,22 +44,24 @@ export default function ContactPage() {
           </div>
           <div className="flex-1 min-w-0">
             <p className="text-sm text-text-secondary">{t("contact.email.label")}</p>
-            <p className="text-text-primary font-medium group-hover:text-accent group-hover:underline transition-all duration-200 truncate">
-              bledowskimaciej@gmail.com
-            </p>
+            <div className="flex items-center gap-2">
+              <p className="text-text-primary font-medium group-hover:text-accent group-hover:underline transition-all duration-200 truncate">
+                bledowskimaciej@gmail.com
+              </p>
+              <button
+                onClick={copyEmail}
+                className="p-1 rounded text-text-secondary hover:text-accent transition-colors flex-shrink-0"
+                title="Copy email"
+                aria-label="Copy email address"
+              >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                </svg>
+              </button>
+            </div>
           </div>
           <ChevronRight />
-          <button
-            onClick={copyEmail}
-            className="absolute top-4 right-4 p-1.5 rounded-md text-text-secondary hover:text-accent hover:bg-surface-light transition-colors"
-            title="Copy email"
-            aria-label="Copy email address"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-            </svg>
-          </button>
         </a>
 
         {/* LinkedIn */}
