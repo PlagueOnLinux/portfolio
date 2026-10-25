@@ -6,34 +6,85 @@ import { personalInfo } from "@/data/personal";
 export default function CVPolishPage() {
   const experiences = [
     {
-      role: "Rozwój środowisk IT i wsparcie techniczne",
-      company: "Freelance",
+      role: "IT Support Specialist",
+      company: "Boston Scientific",
       period: "12/2025 - Obecnie",
-      description: "Samodzielna realizacja usług IT dla klientów indywidualnych, obejmujących diagnostykę i naprawę komputerów, konfigurację urządzeń peryferyjnych oraz optymalizację systemów operacyjnych. Administracja systemami Linux w środowisku testowym. Projektowanie i rozwój środowiska HomeLab opartego o Proxmox.",
+      description: [
+        "Samodzielne wsparcie techniczne onsite dla około 400 użytkowników warszawskiego biura, obejmujące bezpośrednią obsługę pracowników, rozwiązywanie problemów eskalowanych z pierwszej linii wsparcia oraz wsparcie użytkowników VIP.",
+        "Diagnostyka i rozwiązywanie problemów związanych z Windows 10/11, macOS, Microsoft 365, sprzętem komputerowym, oprogramowaniem, urządzeniami końcowymi i siecią.",
+        "Instalacja, konfiguracja i obsługa laptopów, komputerów, urządzeń wielofunkcyjnych, telefonów służbowych, sprzętu konferencyjnego i pozostałych urządzeń peryferyjnych.",
+        "Zarządzanie urządzeniami końcowymi przez Microsoft Intune, w tym rejestracja urządzeń, konfiguracja polityk, wdrażanie aplikacji, synchronizacja i zdalne zarządzanie.",
+        "Obsługa incydentów i zgłoszeń serwisowych w ServiceNow zgodnie z wymaganiami SLA.",
+        "Zarządzanie cyklem życia sprzętu IT, w tym przygotowanie urządzeń dla nowych pracowników, wymiany sprzętu, obsługa zwrotów oraz przypisywanie urządzeń do użytkowników i centrów kosztowych (cost centers).",
+        "Prowadzenie inwentaryzacji i ewidencji zasobów IT oraz weryfikacja poprawności przypisania sprzętu do użytkowników i działów.",
+        "Tworzenie i wdrażanie procedur IT dotyczących onboardingu, wymiany sprzętu, ewidencji zasobów i standaryzacji procesów operacyjnych.",
+        "Obsługa telefonii komórkowej, w tym organizacja zamówień telefonów i kart SIM, wydawanie urządzeń oraz rozwiązywanie problemów użytkowników.",
+        "Współpraca z globalnymi zespołami IT w zakresie rozwiązywania problemów technicznych i bieżących operacji IT.",
+      ],
     },
     {
-      role: "Wsparcie Systemów Linux i Projekty IT",
+      role: "Wsparcie Systemów Linux i Projekty IT (Freelance)",
       company: "Uniwersytet Warszawski / Warner Bros. Discovery",
       period: "09/2025 - 11/2025",
-      description: "Uniwersytet Warszawski: Wsparcie techniczne w środowisku akademickim z dominacją systemów Linux (Ubuntu, Debian); diagnostyka sprzętowa i systemowa stacji roboczych. Warner Bros. Discovery: Doraźna interwencja techniczna obejmująca wsparcie infrastruktury IT oraz inwentaryzację sprzętową.",
+      description: [
+        "Uniwersytet Warszawski: Wsparcie techniczne w środowisku akademickim z dominacją systemów Linux (Ubuntu, Debian); diagnostyka sprzętowa i systemowa stacji roboczych naukowców i inżynierów.",
+        "Warner Bros. Discovery: Doraźna interwencja techniczna obejmująca wsparcie infrastruktury IT oraz inwentaryzację sprzętową.",
+      ],
     },
     {
       role: "IT Support Engineer",
       company: "Xperi Inc.",
       period: "09/2024 - 05/2025",
-      description: "Samodzielna odpowiedzialność za infrastrukturę IT biura w Warszawie (~200 pracowników). Obsługa 20+ zgłoszeń dziennie w ServiceNow. Zarządzanie flotą laptopów przez Intune i Jamf Pro; administracja kontami w Okta, Active Directory oraz AWS. Zapewnianie priorytetowego wsparcia VIP.",
+      description: [
+        "Samodzielna odpowiedzialność za infrastrukturę IT biura w Warszawie (~200 pracowników): pełne zarządzanie wsparciem technicznym na miejscu, w tym utrzymanie systemów wideokonferencyjnych oraz zaplecza sprzętowego.",
+        "Obsługa 20+ zgłoszeń technicznych dziennie w systemie ServiceNow, z priorytetem na wsparcie bezpośrednie użytkowników lokalnych.",
+        "Zarządzanie flotą laptopów (Windows, macOS, Linux) przez Intune i Jamf Pro; administracja kontami i dostępami w środowiskach Okta, Active Directory oraz AWS.",
+        "Kompleksowy proces przygotowania, wydawania i inwentaryzacji sprzętu IT dla nowych oraz obecnych pracowników biura.",
+        "Zapewnianie priorytetowej pomocy technicznej dla kadry zarządzającej (VIP Support) bezpośrednio w biurze w Warszawie.",
+        "Tech Stack: Microsoft Intune, Jamf Pro, Okta, Active Directory, AWS, GlobalProtect VPN, ServiceNow, Windows, macOS, Linux (Ubuntu/Debian).",
+      ],
     },
     {
-      role: "Projekty krótkoterminowe i wsparcie IT",
-      company: "Euvic IT / KPMG / LUX MED / Coty",
+      role: "Projekty krótkoterminowe i wsparcie IT (Freelance)",
+      company: "KPMG / Euvic IT / LUX MED / Coty",
       period: "02/2023 - 09/2024",
-      description: "Euvic IT: Masowe przygotowanie i konfiguracja 100+ stacji roboczych. KPMG: Diagnoza usterek, obsługa ITSM, administracja AD, VIP Support. LUX MED: Zdalna diagnoza, systemy ticketowe. Coty: Wsparcie globalne w j. angielskim.",
+      description: [
+        "Euvic IT: Masowe przygotowanie i konfiguracja ponad 100+ stacji roboczych Windows dla użytkowników korporacyjnych.",
+        "KPMG, Sp. z o.o.: Diagnoza usterek sprzętowych, obsługa zgłoszeń ITSM oraz administracja kontami w Active Directory oraz zapewnianie priorytetowego wsparcia IT dla kadry zarządzającej (VIP Support).",
+        "LUX MED, Sp. z o.o.: Zdalna diagnoza problemów IT, obsługa systemów ticketowych i konfiguracja aplikacji.",
+        "Coty, Inc.: Wsparcie globalne w j. angielskim oraz administracja kontami użytkowników.",
+        "Zlecenia Freelance: Sprzętowa diagnostyka, naprawa urządzeń peryferyjnych (drukarki) oraz konfiguracja sieci domowych.",
+      ],
     },
     {
       role: "Specjalista ds. technicznej obsługi klienta",
-      company: "ASUS Polska Sp. z o.o.",
+      company: "ASUS",
       period: "10/2021 - 01/2023",
-      description: "Obsługa połączeń od klientów i udzielanie szybkiej pomocy. Wsparcie techniczne, aktywna obecność na forum technicznym. Monitorowanie trendów i analiza zgłoszeń klientów.",
+      description: [
+        "Odbieranie połączeń od klientów: Profesjonalne i szybkie reagowanie na połączenia telefoniczne od klientów, zapewniając im natychmiastową pomoc i odpowiedzi na pytania techniczne.",
+        "Wsparcie techniczne klienta: Dostarczanie kompleksowej pomocy technicznej klientom, obejmującej diagnozowanie problemów, proponowanie rozwiązań oraz udzielanie instrukcji dotyczących produktów ASUS.",
+        "Obsługa forum technicznego: Monitorowanie i zarządzanie oficjalnym forum technicznym ASUS, udzielanie odpowiedzi na pytania użytkowników oraz publikowanie pomocnych poradników i artykułów.",
+        "Przekierowywanie do odpowiednich działów: Skuteczne przekierowywanie zgłoszeń klientów do odpowiednich zespołów lub specjalistów w firmie, zapewniając szybkie i efektywne rozwiązanie problemów.",
+        "Dokumentacja zgłoszeń: Rejestrowanie wszystkich zgłoszeń klientów w systemie zarządzania zgłoszeniami, zapewniając dokładną dokumentację i śledzenie statusu zgłoszeń.",
+        "Rozwiązywanie problemów z oprogramowaniem i sprzętem: Diagnozowanie i rozwiązywanie problemów związanych z produktami ASUS, takimi jak laptopy, komputery stacjonarne, monitory i inne urządzenia.",
+        "Aktualizacje i konserwacja systemów: Przeprowadzanie regularnych aktualizacji oprogramowania oraz konserwacji sprzętu, aby zapewnić optymalne działanie urządzeń.",
+        "Edukacja klientów: Prowadzenie szkoleń online i tworzenie materiałów edukacyjnych dla klientów, aby zwiększyć ich wiedzę na temat użytkowania produktów ASUS.",
+        "Zarządzanie reklamacjami: Koordynowanie procesu reklamacji, dbając o spełnienie wszystkich wymogów proceduralnych i zapewnienie satysfakcji klientów.",
+        "Współpraca z zespołami wsparcia: Bliska współpraca z innymi zespołami wsparcia technicznego w celu identyfikowania i rozwiązywania złożonych problemów, a także wdrażania nowych rozwiązań i usprawnień.",
+      ],
+    },
+    {
+      role: "Praktykant w dziale produkcji",
+      company: "NTT System S.A.",
+      period: "05/2017 - 09/2017",
+      description: [
+        "Montaż sprzętu komputerowego: Profesjonalne montowanie i konfigurowanie komputerów oraz innych urządzeń peryferyjnych, zapewniając ich optymalne działanie i zgodność ze specyfikacjami technicznymi.",
+        "Organizacja stanowiska pracy: Tworzenie i utrzymywanie ergonomicznych oraz efektywnych stanowisk pracy, dbając o wygodę i produktywność użytkowników.",
+        "Instalacje systemów operacyjnych: Instalowanie, konfigurowanie i aktualizowanie systemów operacyjnych na nowych i istniejących urządzeniach, zapewniając ich bezproblemowe funkcjonowanie.",
+        "Diagnostyka i naprawa usterek: Identyfikowanie i naprawianie problemów sprzętowych i programowych, minimalizując przestoje i zapewniając ciągłość pracy użytkowników.",
+        "Zarządzanie oprogramowaniem: Instalowanie i konfigurowanie aplikacji, zapewniając ich zgodność z firmowymi standardami oraz optymalne działanie.",
+        "Optymalizacja sprzętu i oprogramowania: Regularne monitorowanie wydajności sprzętu i oprogramowania, przeprowadzanie koniecznych aktualizacji i optymalizacji w celu poprawy efektywności pracy.",
+      ],
     },
   ];
 
@@ -92,7 +143,14 @@ export default function CVPolishPage() {
                   </div>
                   <span className="text-text-secondary text-sm font-mono">{exp.period}</span>
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed">{exp.description}</p>
+                <ul className="space-y-1.5">
+                  {exp.description.map((point, j) => (
+                    <li key={j} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
+                      <span className="text-accent font-mono text-xs mt-1 flex-shrink-0">&#9656;</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
@@ -115,7 +173,7 @@ export default function CVPolishPage() {
             <div className="glass-card">
               <h3 className="text-text-primary font-medium text-sm mb-3">Kompetencje</h3>
               <ul className="space-y-1.5">
-                {["Administracja systemami operacyjnymi", "Zarządzanie urządzeniami końcowymi", "Zarządzanie tożsamością i dostępami", "Wirtualizacja i konteneryzacja", "Diagnostyka sprzętu i systemów", "Podstawy administracji sieciami LAN"].map((s) => (
+                {["Administracja systemami operacyjnymi", "Zarządzanie urządzeniami końcowymi", "Zarządzanie tożsamością i dostępami", "Zarządzanie zasobami i inwentaryzacją IT", "Zarządzanie incydentami i eskalacjami", "Tworzenie i standaryzacja procesów IT", "Wirtualizacja i konteneryzacja", "Diagnostyka sprzętu i systemów", "Podstawy administracji sieciami LAN"].map((s) => (
                   <li key={s} className="flex items-center gap-2 text-text-secondary text-xs">
                     <span className="text-accent font-mono">&#9656;</span>{s}
                   </li>
@@ -161,9 +219,14 @@ export default function CVPolishPage() {
             <span className="text-accent font-mono text-sm">06.</span>Języki obce
           </h2>
           <div className="glass-card">
-            <span className="text-text-secondary text-sm">
-              <span className="text-text-primary font-medium">Angielski</span> — C1
-            </span>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-text-secondary text-sm">
+                <span className="text-text-primary font-medium">Polski</span> — język ojczysty
+              </span>
+              <span className="text-text-secondary text-sm">
+                <span className="text-text-primary font-medium">Angielski</span> — C1
+              </span>
+            </div>
           </div>
         </section>
       </div>

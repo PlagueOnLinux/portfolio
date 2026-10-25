@@ -19,9 +19,9 @@ export const translations: Record<string, string> = {
   "about.p1":
     "IT Support Engineer with over 3 years of experience in enterprise environments, specializing in endpoint administration, identity management and IT infrastructure support. I work daily with Windows, Linux and macOS, as well as enterprise solutions including Microsoft Intune, Jamf Pro, Active Directory and Okta.",
   "about.p2":
-    "Previously the sole IT support engineer for a 200-person office at Xperi Inc., responsible for all on-site IT support, fleet management, and VIP support for senior leadership.",
+    "Currently an IT Support Specialist at Boston Scientific, providing independent on-site support for around 400 users \u2014 endpoint management with Microsoft Intune, incident handling in ServiceNow, hardware lifecycle and IT asset management, and VIP support. I work daily across Windows, Linux and macOS, with enterprise solutions including Intune, Jamf Pro, Active Directory and Okta.",
   "about.p3":
-    "Outside of work, I develop my personal technical projects, including a Proxmox-based HomeLab environment and HireMate, an AI-powered job search assistant, continuously expanding my expertise in IT infrastructure, Linux systems, automation and artificial intelligence.",
+    "Outside of work, I develop my own technical projects \u2014 a Proxmox-based HomeLab running 17+ containers and 25+ self-hosted services, and HireMate, a local-first AI-powered job search assistant. Through them I keep expanding my expertise in IT infrastructure, Linux systems, automation and artificial intelligence.",
 
   // Experience
   "experience.title": "Experience",

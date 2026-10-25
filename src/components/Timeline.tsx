@@ -32,7 +32,14 @@ export default function Timeline() {
                     <span className="text-text-secondary text-sm font-mono whitespace-nowrap">{exp.period}</span>
                   </div>
 
-                  <p className="text-text-secondary text-sm leading-relaxed mb-4">{exp.description}</p>
+                  <ul className="space-y-1.5 mb-4">
+                    {exp.description.map((point, i) => (
+                      <li key={i} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
+                        <span className="text-accent font-mono text-xs mt-1 flex-shrink-0">&#9656;</span>
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
 
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech) => (
