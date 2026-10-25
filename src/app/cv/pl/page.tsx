@@ -6,13 +6,13 @@ import { personalInfo } from "@/data/personal";
 export default function CVPolishPage() {
   const experiences = [
     {
-      role: "Rozwój środowisk IT i wsparcie techniczne",
-      company: "Freelance",
+      role: "IT Support Specialist",
+      company: "Boston Scientific",
       period: "12/2025 - Obecnie",
-      description: "Samodzielna realizacja usług IT dla klientów indywidualnych, obejmujących diagnostykę i naprawę komputerów, konfigurację urządzeń peryferyjnych oraz optymalizację systemów operacyjnych. Administracja systemami Linux w środowisku testowym. Projektowanie i rozwój środowiska HomeLab opartego o Proxmox.",
+      description: "Samodzielne wsparcie IT dla ~400 użytkowników biura, obejmujące bezpośrednią obsługę zgłoszeń, eskalacje z pierwszej linii wsparcia oraz wsparcie VIP. Diagnostyka problemów z Windows 10/11, macOS, Microsoft 365, sprzętem komputerowym, siecią i urządzeniami peryferyjnymi. Zarządzanie urządzeniami Windows przez Microsoft Intune, w tym konfiguracja, wdrażanie aplikacji i zdalna administracja. Obsługa incydentów w ServiceNow zgodnie z SLA oraz wsparcie urządzeń wielofunkcyjnych, sal konferencyjnych i telefonów służbowych. Zarządzanie cyklem życia sprzętu IT: onboarding, offboarding, wymiany, inwentaryzacja i przypisywanie urządzeń do użytkowników oraz centrów kosztowych. Tworzenie i wdrażanie procedur IT dotyczących onboardingu, ewidencji sprzętu i standaryzacji procesów.",
     },
     {
-      role: "Wsparcie Systemów Linux i Projekty IT",
+      role: "Wsparcie Systemów Linux i Projekty IT (Freelance)",
       company: "Uniwersytet Warszawski / Warner Bros. Discovery",
       period: "09/2025 - 11/2025",
       description: "Uniwersytet Warszawski: Wsparcie techniczne w środowisku akademickim z dominacją systemów Linux (Ubuntu, Debian); diagnostyka sprzętowa i systemowa stacji roboczych. Warner Bros. Discovery: Doraźna interwencja techniczna obejmująca wsparcie infrastruktury IT oraz inwentaryzację sprzętową.",
@@ -24,10 +24,10 @@ export default function CVPolishPage() {
       description: "Samodzielna odpowiedzialność za infrastrukturę IT biura w Warszawie (~200 pracowników). Obsługa 20+ zgłoszeń dziennie w ServiceNow. Zarządzanie flotą laptopów przez Intune i Jamf Pro; administracja kontami w Okta, Active Directory oraz AWS. Zapewnianie priorytetowego wsparcia VIP.",
     },
     {
-      role: "Projekty krótkoterminowe i wsparcie IT",
+      role: "Projekty krótkoterminowe i wsparcie IT (Freelance)",
       company: "Euvic IT / KPMG / LUX MED / Coty",
       period: "02/2023 - 09/2024",
-      description: "Euvic IT: Masowe przygotowanie i konfiguracja 100+ stacji roboczych. KPMG: Diagnoza usterek, obsługa ITSM, administracja AD, VIP Support. LUX MED: Zdalna diagnoza, systemy ticketowe. Coty: Wsparcie globalne w j. angielskim.",
+      description: "Euvic IT: Masowe przygotowanie i konfiguracja 100+ stacji roboczych. KPMG: Diagnoza usterek, obsługa ITSM, administracja AD, VIP Support. LUX MED: Zdalna diagnoza, systemy ticketowe. Coty: Wsparcie globalne w j. angielskim. Zlecenia Freelance: Sprzętowa diagnostyka, naprawa urządzeń peryferyjnych oraz konfiguracja sieci domowych.",
     },
     {
       role: "Specjalista ds. technicznej obsługi klienta",
@@ -115,7 +115,7 @@ export default function CVPolishPage() {
             <div className="glass-card">
               <h3 className="text-text-primary font-medium text-sm mb-3">Kompetencje</h3>
               <ul className="space-y-1.5">
-                {["Administracja systemami operacyjnymi", "Zarządzanie urządzeniami końcowymi", "Zarządzanie tożsamością i dostępami", "Wirtualizacja i konteneryzacja", "Diagnostyka sprzętu i systemów", "Podstawy administracji sieciami LAN"].map((s) => (
+                {["Administracja systemami operacyjnymi", "Zarządzanie urządzeniami końcowymi", "Zarządzanie tożsamością i dostępami", "Zarządzanie zasobami i inwentaryzacją IT", "Zarządzanie incydentami i eskalacjami", "Tworzenie i standaryzacja procesów IT", "Wirtualizacja i konteneryzacja", "Diagnostyka sprzętu i systemów", "Podstawy administracji sieciami LAN"].map((s) => (
                   <li key={s} className="flex items-center gap-2 text-text-secondary text-xs">
                     <span className="text-accent font-mono">&#9656;</span>{s}
                   </li>
@@ -161,9 +161,14 @@ export default function CVPolishPage() {
             <span className="text-accent font-mono text-sm">06.</span>Języki obce
           </h2>
           <div className="glass-card">
-            <span className="text-text-secondary text-sm">
-              <span className="text-text-primary font-medium">Angielski</span> — C1
-            </span>
+            <div className="flex flex-wrap gap-4">
+              <span className="text-text-secondary text-sm">
+                <span className="text-text-primary font-medium">Polski</span> — język ojczysty
+              </span>
+              <span className="text-text-secondary text-sm">
+                <span className="text-text-primary font-medium">Angielski</span> — C1
+              </span>
+            </div>
           </div>
         </section>
       </div>
