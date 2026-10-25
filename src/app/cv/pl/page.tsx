@@ -9,31 +9,59 @@ export default function CVPolishPage() {
       role: "IT Support Specialist",
       company: "Boston Scientific",
       period: "12/2025 - Obecnie",
-      description: "Samodzielne wsparcie IT dla ~400 użytkowników biura, obejmujące bezpośrednią obsługę zgłoszeń, eskalacje z pierwszej linii wsparcia oraz wsparcie VIP. Diagnostyka problemów z Windows 10/11, macOS, Microsoft 365, sprzętem komputerowym, siecią i urządzeniami peryferyjnymi. Zarządzanie urządzeniami Windows przez Microsoft Intune, w tym konfiguracja, wdrażanie aplikacji i zdalna administracja. Obsługa incydentów w ServiceNow zgodnie z SLA oraz wsparcie urządzeń wielofunkcyjnych, sal konferencyjnych i telefonów służbowych. Zarządzanie cyklem życia sprzętu IT: onboarding, offboarding, wymiany, inwentaryzacja i przypisywanie urządzeń do użytkowników oraz centrów kosztowych. Tworzenie i wdrażanie procedur IT dotyczących onboardingu, ewidencji sprzętu i standaryzacji procesów.",
+      description: [
+        "Samodzielne wsparcie IT dla ~400 użytkowników biura, obejmujące bezpośrednią obsługę zgłoszeń, eskalacje z pierwszej linii wsparcia oraz wsparcie VIP.",
+        "Diagnostyka problemów z Windows 10/11, macOS, Microsoft 365, sprzętem komputerowym, siecią i urządzeniami peryferyjnymi.",
+        "Zarządzanie urządzeniami Windows przez Microsoft Intune, w tym konfiguracja, wdrażanie aplikacji i zdalna administracja.",
+        "Obsługa incydentów w ServiceNow zgodnie z SLA oraz wsparcie urządzeń wielofunkcyjnych, sal konferencyjnych i telefonów służbowych.",
+        "Zarządzanie cyklem życia sprzętu IT: onboarding, offboarding, wymiany, inwentaryzacja i przypisywanie urządzeń do użytkowników oraz centrów kosztowych.",
+        "Tworzenie i wdrażanie procedur IT dotyczących onboardingu, ewidencji sprzętu i standaryzacji procesów.",
+      ],
     },
     {
       role: "Wsparcie Systemów Linux i Projekty IT (Freelance)",
       company: "Uniwersytet Warszawski / Warner Bros. Discovery",
       period: "09/2025 - 11/2025",
-      description: "Uniwersytet Warszawski: Wsparcie techniczne w środowisku akademickim z dominacją systemów Linux (Ubuntu, Debian); diagnostyka sprzętowa i systemowa stacji roboczych. Warner Bros. Discovery: Doraźna interwencja techniczna obejmująca wsparcie infrastruktury IT oraz inwentaryzację sprzętową.",
+      description: [
+        "Uniwersytet Warszawski: Wsparcie techniczne w środowisku akademickim z dominacją systemów Linux (Ubuntu, Debian); diagnostyka sprzętowa i systemowa stacji roboczych naukowców i inżynierów.",
+        "Warner Bros. Discovery: Doraźna interwencja techniczna obejmująca wsparcie infrastruktury IT oraz inwentaryzację sprzętową.",
+      ],
     },
     {
       role: "IT Support Engineer",
       company: "Xperi Inc.",
       period: "09/2024 - 05/2025",
-      description: "Samodzielna odpowiedzialność za infrastrukturę IT biura w Warszawie (~200 pracowników). Obsługa 20+ zgłoszeń dziennie w ServiceNow. Zarządzanie flotą laptopów przez Intune i Jamf Pro; administracja kontami w Okta, Active Directory oraz AWS. Zapewnianie priorytetowego wsparcia VIP.",
+      description: [
+        "Samodzielna odpowiedzialność za infrastrukturę IT biura w Warszawie (~200 pracowników): pełne zarządzanie wsparciem technicznym na miejscu, w tym utrzymanie systemów wideokonferencyjnych.",
+        "Obsługa 20+ zgłoszeń technicznych dziennie w systemie ServiceNow, z priorytetem na wsparcie bezpośrednie użytkowników lokalnych.",
+        "Zarządzanie flotą laptopów (Windows, macOS, Linux) przez Intune i Jamf Pro; administracja kontami i dostępami w środowiskach Okta, Active Directory oraz AWS.",
+        "Kompleksowy proces przygotowania, wydawania i inwentaryzacji sprzętu IT dla pracowników biura.",
+        "Zapewnianie priorytetowej pomocy technicznej dla kadry zarządzającej (VIP Support) bezpośrednio w biurze w Warszawie.",
+      ],
     },
     {
       role: "Projekty krótkoterminowe i wsparcie IT (Freelance)",
       company: "Euvic IT / KPMG / LUX MED / Coty",
       period: "02/2023 - 09/2024",
-      description: "Euvic IT: Masowe przygotowanie i konfiguracja 100+ stacji roboczych. KPMG: Diagnoza usterek, obsługa ITSM, administracja AD, VIP Support. LUX MED: Zdalna diagnoza, systemy ticketowe. Coty: Wsparcie globalne w j. angielskim. Zlecenia Freelance: Sprzętowa diagnostyka, naprawa urządzeń peryferyjnych oraz konfiguracja sieci domowych.",
+      description: [
+        "Euvic IT: Masowe przygotowanie i konfiguracja ponad 100+ stacji roboczych Windows dla użytkowników korporacyjnych.",
+        "KPMG, Sp. z o.o.: Diagnoza usterek sprzętowych, obsługa zgłoszeń ITSM oraz administracja kontami w Active Directory, a także priorytetowe wsparcie IT dla kadry zarządzającej (VIP Support).",
+        "LUX MED, Sp. z o.o.: Zdalna diagnoza problemów IT, obsługa systemów ticketowych i konfiguracja aplikacji.",
+        "Coty, Inc.: Wsparcie globalne w j. angielskim oraz administracja kontami użytkowników.",
+        "Zlecenia Freelance: Sprzętowa diagnostyka, naprawa urządzeń peryferyjnych oraz konfiguracja sieci domowych.",
+      ],
     },
     {
       role: "Specjalista ds. technicznej obsługi klienta",
       company: "ASUS Polska Sp. z o.o.",
       period: "10/2021 - 01/2023",
-      description: "Obsługa połączeń od klientów i udzielanie szybkiej pomocy. Wsparcie techniczne, aktywna obecność na forum technicznym. Monitorowanie trendów i analiza zgłoszeń klientów.",
+      description: [
+        "Obsługa połączeń od klientów i udzielanie szybkiej pomocy w rozwiązywaniu problemów.",
+        "Udzielanie wsparcia technicznego klientom, udostępnianie informacji o nowych funkcjach i rozwiązaniach.",
+        "Aktywna obecność na forum technicznym, udzielanie pomocy użytkownikom i budowanie społeczności wsparcia.",
+        "Skuteczne przekierowywanie klientów do odpowiednich działów lub specjalistów.",
+        "Monitorowanie trendów i analiza zgłoszeń klientów w celu identyfikacji powtarzających się problemów.",
+      ],
     },
   ];
 
@@ -92,7 +120,14 @@ export default function CVPolishPage() {
                   </div>
                   <span className="text-text-secondary text-sm font-mono">{exp.period}</span>
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed">{exp.description}</p>
+                <ul className="space-y-1.5">
+                  {exp.description.map((point, j) => (
+                    <li key={j} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
+                      <span className="text-accent font-mono text-xs mt-1 flex-shrink-0">&#9656;</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

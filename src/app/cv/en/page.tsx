@@ -60,7 +60,14 @@ export default function CVEnglishPage() {
                   </div>
                   <span className="text-text-secondary text-sm font-mono">{exp.period}</span>
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed">{exp.description}</p>
+                <ul className="space-y-1.5">
+                  {exp.description.map((point, j) => (
+                    <li key={j} className="flex items-start gap-2 text-text-secondary text-sm leading-relaxed">
+                      <span className="text-accent font-mono text-xs mt-1 flex-shrink-0">&#9656;</span>
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
