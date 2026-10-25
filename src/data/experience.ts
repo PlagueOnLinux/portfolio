@@ -8,16 +8,16 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    company: "Freelance",
-    role: "Freelance IT Support & Infrastructure Projects",
+    company: "Boston Scientific",
+    role: "IT Support Specialist",
     period: "12/2025 - Present",
     description:
-      "Delivered independent IT services for individual clients, including hardware diagnostics and repair, peripheral device configuration, and operating system optimization. Administer Linux systems in a personal lab environment, including user, permission and file system management. Designed and developed a Proxmox-based HomeLab environment supporting containerization, infrastructure monitoring and self-hosted services.",
-    technologies: ["Linux", "Proxmox", "Docker", "Hardware Diagnostics", "Networking"],
+      "Provide independent IT support for approximately 400 office users, handling direct requests, first-line escalations and VIP support. Diagnose and resolve Windows 10/11, macOS, Microsoft 365, hardware, software, network and peripheral-related issues. Manage Windows endpoints through Microsoft Intune, including configuration, application deployment and remote administration. Handle incidents and service requests in ServiceNow in accordance with SLA requirements, while supporting multifunction printers, conference room equipment and corporate mobile devices. Manage the IT asset lifecycle, including employee onboarding/offboarding, hardware replacements, inventory and device allocation to users and cost centers. Develop and implement IT procedures for onboarding, asset tracking and process standardization.",
+    technologies: ["Microsoft Intune", "ServiceNow", "Windows", "macOS", "Microsoft 365", "VIP Support"],
   },
   {
     company: "University of Warsaw / Warner Bros. Discovery",
-    role: "Linux Systems Support & IT Projects",
+    role: "Linux Systems Support & IT Projects (Freelance)",
     period: "09/2025 - 11/2025",
     description:
       "University of Warsaw \u2013 Provided technical support in a Linux-dominant academic environment (Ubuntu, Debian), including hardware and system diagnostics for researchers and engineers. Warner Bros. Discovery \u2013 Delivered ad-hoc IT support, including infrastructure assistance and hardware inventory management.",
@@ -33,11 +33,11 @@ export const experiences: Experience[] = [
   },
   {
     company: "Euvic IT / KPMG / LUX MED / Coty",
-    role: "Short-term IT Projects & Support",
+    role: "Short-term IT Projects & Support (Freelance)",
     period: "02/2023 - 09/2024",
     description:
-      "Euvic IT \u2013 Prepared and configured 100+ Windows workstations for corporate users. KPMG \u2013 Diagnosed hardware issues, handled ITSM tickets, administered user accounts in Active Directory, and provided VIP support for senior management. LUX MED \u2013 Delivered remote IT support, handled ticketing systems, and configured applications. Coty Inc. \u2013 Provided global IT support in English and managed user accounts.",
-    technologies: ["Active Directory", "ITSM", "Windows", "VIP Support"],
+      "Euvic IT \u2013 Prepared and configured 100+ Windows workstations for corporate users. KPMG \u2013 Diagnosed hardware issues, handled ITSM tickets, administered user accounts in Active Directory, and provided VIP support for senior management. LUX MED \u2013 Delivered remote IT support, handled ticketing systems, and configured applications. Coty Inc. \u2013 Provided global IT support in English and managed user accounts. Freelance Projects \u2013 Hardware diagnostics, printer repair, and home network configuration.",
+    technologies: ["Active Directory", "ITSM", "Windows", "VIP Support", "Networking"],
   },
   {
     company: "ASUS Poland Sp. z o.o.",
